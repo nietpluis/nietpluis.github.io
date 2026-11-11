@@ -12,19 +12,16 @@ function changeDuboisHat(){
  svg.querySelectorAll('[stroke]').forEach(el=>{if(el.getAttribute('stroke')==='#14241e')el.setAttribute('stroke','#14241e')});
 }
 const cards=document.querySelectorAll('.flipcard');
-const greenlightEditMode=new URLSearchParams(window.location.search).get('greenlight')==='edit';
-if(greenlightEditMode){
- document.body.classList.add('greenlight-edit-mode');
- cards.forEach(card=>{
-  card.classList.add('flipped');
-  card.setAttribute('aria-pressed','true');
- });
- document.getElementById('greenlight-edit-notice').hidden=false;
-}else{
- cards.forEach(card=>card.addEventListener('click',()=>{
-  const flipped=card.classList.toggle('flipped');
-  card.setAttribute('aria-pressed',String(flipped));
-  if(card===duboisCard&&!flipped)changeDuboisHat();
- }));
+function toggleCard(card){
+ const flipped=card.classList.toggle('flipped');
+ card.setAttribute('aria-pressed',String(flipped));
+ if(card===duboisCard&&!flipped)changeDuboisHat();
 }
-document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{const selected=btn.dataset.filter;document.querySelectorAll('.filter').forEach(b=>{b.classList.toggle('active',b===btn);b.setAttribute('aria-pressed',String(b===btn))});document.querySelectorAll('[data-section]').forEach(el=>{el.hidden=selected!=='Alle'&&el.dataset.section!==selected});if(!greenlightEditMode)cards.forEach(card=>{if(selected!=='Alle'&&card.dataset.group!==selected){card.classList.remove('flipped');card.setAttribute('aria-pressed','false')}})}));
+cards.forEach(card=>card.addEventListener('click',()=>toggleCard(card)));
+window.addEventListener('message',event=>{
+ const iframe=Array.from(document.querySelectorAll('[data-card-back]')).find(frame=>frame.contentWindow===event.source);
+ if(!iframe||event.data?.type!=='nietpluis-card-flip')return;
+ const card=iframe.closest('.flipcard');
+ if(card)toggleCard(card);
+});
+document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{const selected=btn.dataset.filter;document.querySelectorAll('.filter').forEach(b=>{b.classList.toggle('active',b===btn);b.setAttribute('aria-pressed',String(b===btn))});document.querySelectorAll('[data-section]').forEach(el=>{el.hidden=selected!=='Alle'&&el.dataset.section!==selected});cards.forEach(card=>{if(selected!=='Alle'&&card.dataset.group!==selected){card.classList.remove('flipped');card.setAttribute('aria-pressed','false')}})}));

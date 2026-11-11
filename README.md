@@ -9,6 +9,9 @@ A static, multi-page website for GitHub Pages. There is no build step.
 - `dossier-001.html` — interactive dossier 001
 - `kaarten.html` — people and character cards
 - `print.html` — printable dossier archive
+- `card-backs/` — separate HTML content for every card back
+- `dossier-popups/` — separate HTML for dossier evidence, logic grid, answer,
+  and vocabulary popups
 
 Shared site styles and page-specific scripts live in `assets/css/` and
 `assets/js/`. Images and the printable PDF are in `assets/images/` and
@@ -33,9 +36,14 @@ GitHub Pages uses it as the site’s entry page. Update `assets/css/site.css` fo
 shared styling and the dossier-specific files for the interactive investigation
 table.
 
-## Edit card backs in GreenLight
+## Edit card backs and dossier popups
 
-Open `kaarten.html?greenlight=edit` in GreenLight’s visual editor. This editor
-view turns all cards to their backs and disables the flip interaction, so the
-back text can be selected without changing the normal card behavior on
-`kaarten.html`.
+Open the relevant HTML file directly in GreenLight from VS Code Explorer. For
+example, `card-backs/eva.html` is Eva's archive-card back, while
+`card-backs/dossier-riya.html` is Riya's investigation-table card back.
+
+The card-back files are embedded directly in the cards, so edits appear on the
+live site. The files in `dossier-popups/` are likewise the popup content used
+by `dossier-001.html`.
+
+Shared styles and interactive behavior are in `assets/css/` and `assets/js/`.

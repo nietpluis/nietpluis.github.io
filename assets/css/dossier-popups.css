@@ -1,0 +1,291 @@
+:root {
+  color-scheme: light;
+  font-family: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+  color: #34464a;
+  background: transparent;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.popup-sheet {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: 28px 32px;
+  border: 2px solid #c5b59e;
+  border-radius: 6px;
+  background: #fffaf0;
+  box-shadow: 4px 5px 0 #c4b9a5, 0 17px 45px #1d303555;
+}
+
+.popup-sheet h1 {
+  margin: 0 48px 8px 0;
+  color: #354c43;
+  font: 700 clamp(24px, 4vw, 30px) Georgia, "Iowan Old Style", serif;
+}
+
+.popup-sheet > p {
+  margin: 0 0 14px;
+  color: #777a75;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.popup-close {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  float: right;
+  width: 38px;
+  height: 38px;
+  margin: -10px -12px 0 8px;
+  border: 1px solid #cbbda6;
+  border-radius: 50%;
+  background: #fffaf0;
+  color: #e77b70;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.popup-actions {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.popup-actions button,
+.popup-actions a {
+  display: inline-block;
+  padding: 9px 12px;
+  border: 1px solid #b6a68f;
+  border-radius: 5px;
+  background: #f5e8d2;
+  color: #354c43;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.popup-actions button:hover,
+.popup-actions a:hover {
+  background: #fff5e1;
+}
+
+.clue {
+  display: flex;
+  min-height: 0;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 7px 8px;
+  border-bottom: 1px solid #e3e4dc;
+  background: repeating-linear-gradient(to bottom, transparent 0, transparent 22px, #dfe5e5 22px, #dfe5e5 23px);
+  color: #34464a;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.clue input {
+  flex: 0 0 auto;
+  margin-top: 5px;
+  accent-color: #e77b70;
+}
+
+.clue:has(input:checked) span {
+  opacity: 0.45;
+  text-decoration: line-through;
+  text-decoration-color: #bd7376;
+}
+
+.clue strong {
+  color: #354c43;
+}
+
+.logicwrap {
+  overflow: auto;
+}
+
+.logic {
+  min-width: 660px;
+  margin: 12px 0 18px;
+  border-collapse: separate;
+  border-spacing: 0;
+  font: 12px Arial, sans-serif;
+}
+
+.logic th,
+.logic td {
+  padding: 3px;
+  border: 1px solid #d0d7d2;
+  text-align: center;
+}
+
+.logic th {
+  background: #f2e9d8;
+  color: #354c43;
+}
+
+.logic th.rowhead {
+  min-width: 115px;
+  background: #e9e7dc;
+  text-align: left;
+}
+
+.logic td button {
+  width: 31px;
+  height: 31px;
+  border: 0;
+  background: #fff;
+  color: #536168;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.logic td button[data-value="no"] {
+  background: #f8e6e1;
+  color: #a04435;
+}
+
+.logic td button[data-value="yes"] {
+  background: #e2f0e1;
+  color: #256044;
+}
+
+.logic td.block,
+.logic td.emptycorner {
+  border-color: transparent;
+  background: transparent;
+}
+
+.answer {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.answer label {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.answer select {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 9px;
+  border: 1px solid #c9bda7;
+  border-radius: 5px;
+  background: #fffdf7;
+  color: #354c43;
+}
+
+.result {
+  min-height: 24px;
+  margin-top: 12px !important;
+  color: #354c43 !important;
+  font-weight: 700;
+}
+
+.smallnote {
+  color: #777a75;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.vocabsearch {
+  width: 100%;
+  margin: 8px 0 18px;
+  padding: 12px 14px;
+  border: 1px solid #b5a58d;
+  border-radius: 5px;
+  background: #fffdf5;
+  color: #354c43;
+}
+
+.vocabgrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.vocabentry {
+  padding: 10px 13px;
+  border: 1px solid #d8cdbb;
+  border-left: 4px solid #8e9e8a;
+  border-radius: 4px;
+  background: #fffdf5;
+  box-shadow: 1px 2px 2px #554b3420;
+  font: 13px Arial, sans-serif;
+}
+
+.vocabentry strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #354c43;
+}
+
+.vocabentry span {
+  color: #95634e;
+}
+
+.logic th,
+.logic td {
+  border-color: #d0d7d2;
+}
+
+.logic td button {
+  color: #354c43;
+}
+
+.logic td.emptycorner {
+  border: 0;
+  background: transparent;
+}
+
+@media (max-width: 600px) {
+  .popup-sheet {
+    padding: 18px 14px;
+  }
+
+  .clue {
+    gap: 8px;
+    padding: 6px 2px;
+    font-size: 13px;
+  }
+
+  .vocabgrid {
+    grid-template-columns: 1fr;
+  }
+
+  .answer {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Onderzoeksrooster — Dossier 001</title>
+    <link rel="stylesheet" href="../assets/css/dossier-popups.css">
+  </head>
+  <body>
+    <main class="popup-sheet">
+      <button class="popup-close" type="button" aria-label="Sluiten" data-popup-close>×</button>
+      <h1>Onderzoeksrooster</h1>
+      <p>Klik op een vakje: leeg → ✕ (kan niet) → ✓ (hoort bij elkaar) → leeg. Je rooster wordt bewaard zolang deze pagina open is.</p>
+      <div class="logicwrap" id="logic-grid"></div>
+      <div class="popup-actions">
+        <button id="clear-grid" type="button">Rooster wissen</button>
+        <button type="button" data-popup-close>Terug naar de tafel</button>
+      </div>
+    </main>
+    <script src="../assets/js/dossier-rooster.js" defer></script>
+    <script src="../assets/js/dossier-popup-controls.js" defer></script>
+  </body>
+</html>

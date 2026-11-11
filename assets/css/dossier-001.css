@@ -600,3 +600,30 @@ html,body{height:auto!important;min-height:0!important;overflow-x:hidden!importa
 .site-header .navlinks a:hover,.site-header .navlinks a:focus-visible,.site-header .navlinks a.active{background:#e8cf9c;color:#17362c;border-color:#e8cf9c}
 @media(max-width:780px){.site-header nav{gap:12px}.site-header .navlinks{justify-content:center}.site-header .navlinks a{font-size:12px;padding:8px 10px}.site-header .brand strong{font-size:20px}}
 @media(max-width:600px){.site-header nav{padding:12px 16px}.site-header .brand{gap:8px}.site-header .brandmark{width:38px;height:38px;font-size:21px}}
+.popup-frame-sheet{width:min(96vw,940px);height:min(92vh,780px);max-height:92vh;padding:0!important;overflow:hidden!important;border:0!important;background:transparent!important;box-shadow:none!important}
+.popup-frame-sheet iframe{display:block;width:100%;height:100%;border:0;background:transparent}
+.gamecard .face.back{display:block;padding:0!important}
+.gamecard .face.back iframe{display:block;width:100%;height:100%;border:0;background:#fffaf0}
+
+/* Keep the popup iframe at its intended size even when legacy sheet rules apply. */
+.modal .popup-frame-sheet{
+  width:min(96vw,940px)!important;
+  height:min(92vh,780px)!important;
+  max-height:calc(var(--viewport-height,100vh) - 36px)!important;
+  flex:0 0 auto!important;
+}
+#bewijs.modal .popup-frame-sheet,
+#rooster.modal .popup-frame-sheet,
+#antwoord.modal .popup-frame-sheet,
+#woordenlijst.modal .popup-frame-sheet{
+  width:min(96vw,940px)!important;
+  height:min(92vh,780px)!important;
+  max-height:calc(var(--viewport-height,100vh) - 36px)!important;
+  padding:0!important;
+  overflow:hidden!important;
+  border:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  scrollbar-gutter:auto!important;
+}
+body:has(.modal.open){overflow:hidden!important}

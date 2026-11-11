@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Woordenlijst — Dossier 001</title>
+    <link rel="stylesheet" href="../assets/css/dossier-popups.css">
+  </head>
+  <body>
+    <main class="popup-sheet">
+      <button class="popup-close" type="button" aria-label="Sluiten" data-popup-close>×</button>
+      <h1>Woordenlijst</h1>
+      <p>Woorden uit dit dossier met hun Engelse vertaling. Gebruik de zoekbalk om een woord snel te vinden.</p>
+      <input class="vocabsearch" aria-label="Zoek in de woordenlijst" id="vocabulary-search" placeholder="Zoek een Nederlands of Engels woord…" type="search">
+      <div class="vocabgrid" id="vocabulary-list"></div>
+      <div class="popup-actions">
+        <button type="button" data-popup-close>Terug naar de tafel</button>
+      </div>
+    </main>
+    <script src="../assets/js/dossier-vocabulary.js" defer></script>
+    <script src="../assets/js/dossier-popup-controls.js" defer></script>
+  </body>
+</html>
