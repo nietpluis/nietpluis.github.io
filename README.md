@@ -32,3 +32,10 @@ Edit the relevant page in the repository root. Keep `index.html` there so
 GitHub Pages uses it as the site’s entry page. Update `assets/css/site.css` for
 shared styling and the dossier-specific files for the interactive investigation
 table.
+
+## Edit card backs in GreenLight
+
+Open `kaarten.html?greenlight=edit` in GreenLight’s visual editor. This editor
+view turns all cards to their backs and disables the flip interaction, so the
+back text can be selected without changing the normal card behavior on
+`kaarten.html`.

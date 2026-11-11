@@ -11,8 +11,20 @@ function changeDuboisHat(){
  svg.setAttribute('aria-label','Silhouet van Directeur Dubois met '+name.toLowerCase()+' en haar vaste knot');
  svg.querySelectorAll('[stroke]').forEach(el=>{if(el.getAttribute('stroke')==='#14241e')el.setAttribute('stroke','#14241e')});
 }
-const cards=document.querySelectorAll('.flipcard');cards.forEach(card=>card.addEventListener('click',()=>{
- const flipped=card.classList.toggle('flipped');
- card.setAttribute('aria-pressed',String(flipped));
- if(card===duboisCard&&!flipped)changeDuboisHat();
-}));document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{const selected=btn.dataset.filter;document.querySelectorAll('.filter').forEach(b=>{b.classList.toggle('active',b===btn);b.setAttribute('aria-pressed',String(b===btn))});document.querySelectorAll('[data-section]').forEach(el=>{el.hidden=selected!=='Alle'&&el.dataset.section!==selected});cards.forEach(card=>{if(selected!=='Alle'&&card.dataset.group!==selected){card.classList.remove('flipped');card.setAttribute('aria-pressed','false')}})}));
+const cards=document.querySelectorAll('.flipcard');
+const greenlightEditMode=new URLSearchParams(window.location.search).get('greenlight')==='edit';
+if(greenlightEditMode){
+ document.body.classList.add('greenlight-edit-mode');
+ cards.forEach(card=>{
+  card.classList.add('flipped');
+  card.setAttribute('aria-pressed','true');
+ });
+ document.getElementById('greenlight-edit-notice').hidden=false;
+}else{
+ cards.forEach(card=>card.addEventListener('click',()=>{
+  const flipped=card.classList.toggle('flipped');
+  card.setAttribute('aria-pressed',String(flipped));
+  if(card===duboisCard&&!flipped)changeDuboisHat();
+ }));
+}
+document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{const selected=btn.dataset.filter;document.querySelectorAll('.filter').forEach(b=>{b.classList.toggle('active',b===btn);b.setAttribute('aria-pressed',String(b===btn))});document.querySelectorAll('[data-section]').forEach(el=>{el.hidden=selected!=='Alle'&&el.dataset.section!==selected});if(!greenlightEditMode)cards.forEach(card=>{if(selected!=='Alle'&&card.dataset.group!==selected){card.classList.remove('flipped');card.setAttribute('aria-pressed','false')}})}));

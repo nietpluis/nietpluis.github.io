@@ -237,6 +237,14 @@ body.np-modal-open #dossier-game{position:static!important;inset:auto!important;
 body.np-modal-open #casepage .integrated-board{min-height:0!important;}
 body.np-modal-open #floating-research{display:none!important;}
 
-.site-nav a{color:#fff;text-decoration:none;font-size:13px;font-weight:700;padding:9px 13px;border:1px solid #8aa296;border-radius:22px}
-.site-nav a:hover,.site-nav a:focus-visible,.site-nav a[aria-current="page"]{background:#e8cf9c;color:#17362c;border-color:#e8cf9c}
+.brand{flex-shrink:0;color:#fff;text-decoration:none}
+.brand .brandmark{border-color:#d6b78b;color:#f4d8aa}
+.navlinks a{border:1px solid #8aa296;background:transparent;color:#fff;border-radius:22px;padding:9px 13px;cursor:pointer;font-weight:700;font-size:inherit;text-decoration:none}
+.navlinks a:hover,.navlinks a:focus-visible,.navlinks a.active{background:#e8cf9c;color:#17362c;border-color:#e8cf9c}
+.primarybtn{display:inline-block;text-decoration:none}
+.greenlight-edit-notice{max-width:1160px;margin:18px auto 0;padding:12px 18px;border:1px solid #d6b78b;border-radius:7px;background:#fff8e9;color:#354c43;font-size:14px}
+.greenlight-edit-mode .flipcard-inner{transform:rotateY(180deg)}
+.greenlight-edit-mode .flipcard{cursor:default}
+@media(max-width:780px){.site-header nav{gap:12px}.navlinks{justify-content:center}.navlinks a{font-size:12px;padding:8px 10px}.brand strong{font-size:20px}}
+@media(max-width:600px){.site-header nav{padding:12px 16px}.brand{gap:8px}.brandmark{width:38px;height:38px;font-size:21px}}
 .homefeature{text-decoration:none}
