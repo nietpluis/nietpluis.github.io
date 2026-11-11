@@ -1,0 +1,242 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap');
+:root{--forest:#183a30;--forest2:#102b24;--cream:#f8f4e9;--paper:#fffdf7;--red:#a73532;--ink:#22312a;--muted:#65736a;--line:#d9d5c8}*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:'DM Sans',Arial,sans-serif}[hidden]{display:none!important}button{font:inherit}header{background:var(--forest2);color:#fff}nav{max-width:1160px;margin:auto;min-height:76px;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px}.brand{display:flex;align-items:center;gap:12px}.brandmark{border:2px solid #d7bd84;border-radius:50%;width:43px;height:43px;display:grid;place-items:center;color:#e7d2a1;font-size:24px}.brand strong{font-family:Georgia,serif;font-size:23px;letter-spacing:.3px}.brand small{display:block;font-size:11px;color:#c8d6ca;letter-spacing:1.7px;text-transform:uppercase}.navlabel{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#d4ddcf}.hero{position:relative;overflow:hidden;background:radial-gradient(circle at 85% 30%,#315e4b 0%,transparent 42%),linear-gradient(135deg,#214c3d,#102d25);color:#fff}.hero:after{content:'?';font-family:Georgia,serif;position:absolute;right:8%;top:-110px;font-size:440px;opacity:.055;pointer-events:none}.heroinner{max-width:1160px;margin:auto;padding:65px 24px 70px;position:relative;z-index:1}.kicker{color:#e4c58a;text-transform:uppercase;letter-spacing:3px;font-size:12px;font-weight:700}.hero h1{font-family:Georgia,serif;font-size:clamp(42px,6vw,74px);margin:13px 0 14px;line-height:1.06;letter-spacing:-1.8px}.hero h1 em{color:#e6ca91;font-style:normal}.hero p{max-width:590px;color:#dce6dc;line-height:1.7;font-size:16px;margin:0}.stamp{position:absolute;right:10%;bottom:45px;border:3px double #dcb59a;color:#e3bfa8;transform:rotate(-10deg);padding:12px 19px;font-size:13px;font-weight:800;letter-spacing:2px;opacity:.78}.main{max-width:1160px;margin:auto;padding:45px 24px 95px}.intro{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:25px}.intro h2{font:700 35px Georgia,serif;color:var(--forest);margin:0 0 9px}.intro p{margin:0;color:#59675f;max-width:620px;line-height:1.6}.count{font-size:12px;font-weight:700;letter-spacing:1px;color:var(--red);text-transform:uppercase}.filters{display:flex;gap:9px;flex-wrap:wrap;margin:26px 0 33px}.filter{border:1px solid #c7cbbf;background:transparent;color:var(--forest);padding:10px 17px;border-radius:100px;cursor:pointer;font-size:13px;font-weight:700}.filter:hover{border-color:var(--forest)}.filter.active{background:var(--forest);border-color:var(--forest);color:white}.section{margin:34px 0 22px}.section h3{font:700 25px Georgia,serif;color:var(--forest);margin:0 0 7px}.section p{margin:0;color:var(--muted);font-size:13px}.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(216px,1fr));gap:22px}.flipcard{width:100%;height:340px;border:0;padding:0;background:none;text-align:left;perspective:1100px;cursor:pointer;display:block}.flipcard:focus-visible{outline:3px solid var(--red);outline-offset:4px}.flipcard-inner{position:relative;display:block;width:100%;height:100%;transform-style:preserve-3d;transition:transform .55s cubic-bezier(.2,.75,.3,1)}.flipcard.flipped .flipcard-inner{transform:rotateY(180deg)}.face{position:absolute;inset:0;display:flex;flex-direction:column;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:1px solid #d2d1c5;border-radius:9px;overflow:hidden;box-shadow:0 5px 16px #14281c16}.front{background:linear-gradient(145deg,#fdfaf0,#ede9d9);align-items:center;text-align:center;padding:17px 17px 14px}.front:before,.back:before{content:'';position:absolute;inset:8px;border:1px solid #d6d1be;border-radius:5px;pointer-events:none}.eyebrow{width:100%;font-size:9px;letter-spacing:1.6px;color:#67736b;font-weight:800;display:flex;justify-content:space-between;text-align:left}.serial{color:var(--red)}.portrait{width:146px;height:169px;display:grid;place-items:end center;margin:14px 0 9px;background:radial-gradient(ellipse,#dfdfcf 0%,#ecebdd 68%,transparent 69%);border-radius:50%}.portrait svg{width:142px;height:160px;overflow:visible}.cardname{font:700 23px Georgia,serif;color:var(--forest);line-height:1.13;margin:auto 0 5px}.cardmeta{font-size:12px;color:var(--muted)}.turnhint{margin-top:auto;padding-top:12px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#8b7160}.back{transform:rotateY(180deg);background:#fffdf7;padding:18px 19px 15px}.back .eyebrow{font-size:9px}.backtitle{font:700 19px Georgia,serif;color:var(--forest);margin-top:22px}.backname{font-size:15px;font-weight:800;margin-top:4px}.rule{height:2px;background:var(--red);width:43px;margin:12px 0}.detailtag{font-size:11px;color:var(--muted)}.personality{font-weight:800;color:var(--forest);font-size:13px;margin-top:13px}.description{font-size:12px;line-height:1.5;margin-top:8px}.fact{border-left:2px solid #b7a27d;padding-left:9px;margin-top:11px;font-size:11px;color:#56675b}.back .turnhint{margin-top:auto}.empty{display:none;text-align:center;padding:50px;color:var(--muted)}footer{background:var(--forest2);color:#cdd8cd;text-align:center;padding:24px;font-size:12px}footer strong{color:#e5cb96}@media(max-width:600px){.stamp{display:none}.heroinner{padding:47px 24px 52px}.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.flipcard{height:315px}.front{padding:13px 9px}.portrait{width:115px;height:145px}.portrait svg{width:110px;height:140px}.cardname{font-size:18px}.back{padding:13px 12px}.backtitle{font-size:16px;margin-top:18px}.description{font-size:11px}.fact{font-size:10px}.eyebrow{font-size:8px}.main{padding:35px 16px 65px}}@media(prefers-reduced-motion:reduce){.flipcard-inner{transition:none}}
+
+/* Persoonsgegevens op de achterkant van iedere kaart */
+.flipcard{height:385px}.backtitle{margin-top:13px}.back .rule{margin:8px 0}.personality{margin-top:8px}.description{margin-top:5px;line-height:1.35}.personfacts{display:grid;grid-template-columns:1fr 1fr;gap:5px 8px;margin-top:9px;font-size:10px;color:#4c5c52}.personfact{display:block;border-top:1px solid #e5e0d4;padding-top:4px}.personfact strong{display:block;color:#193c30;font-size:9px;text-transform:uppercase;letter-spacing:.4px}.back .turnhint{padding-top:5px}@media(max-width:600px){.flipcard{height:400px}.backtitle{margin-top:9px}.personfacts{gap:4px;font-size:9px}.personfact strong{font-size:8px}}
+
+.navlinks{display:flex;gap:8px;flex-wrap:wrap}.navlinks button{border:1px solid #8aa296;background:transparent;color:#fff;border-radius:22px;padding:9px 13px;cursor:pointer;font-weight:700}.navlinks button.active{background:#e8cf9c;color:#17362c;border-color:#e8cf9c}.casepage{display:none}.casepage.active{display:block}.archivepage.hiddenpage{display:none}.casehero{background:linear-gradient(135deg,#1a4235,#102b24);color:#fff;padding:48px max(24px,calc((100vw - 1112px)/2));}.casehero h1{font:700 clamp(35px,5vw,60px) Georgia,serif;margin:12px 0}.casehero p{max-width:770px;line-height:1.75;color:#e6e9dc}.casebody{max-width:1160px;margin:auto;padding:34px 24px 90px}.casebar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:24px}.casebar button,.primarybtn{border:1px solid #183a30;border-radius:30px;background:#183a30;color:white;padding:11px 19px;font-weight:700;cursor:pointer}.casebar button.secondary{background:transparent;color:#183a30}.casebar button.active{background:#a73532;border-color:#a73532;color:white}.evidence{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin:18px 0 36px}.evidence article{background:#fffdf7;border:1px solid #d9d5c8;border-left:4px solid #a73532;border-radius:7px;padding:19px;box-shadow:0 2px 8px #152a1d0a}.evidence strong{display:block;color:#a73532;font-size:12px;letter-spacing:1px;margin-bottom:9px}.evidence p{margin:0;line-height:1.65}.casetitle{font:700 27px Georgia,serif;color:#183a30;margin:34px 0 10px}.casecards{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px}.mini{border:1px solid #d2d1c5;border-radius:9px;background:#fffdf7;overflow:hidden;min-height:205px;padding:15px;text-align:center;cursor:pointer;color:#22312a}.mini .portrait{display:block;height:105px;margin:auto;max-width:105px}.mini .portrait svg{width:100%;height:100%}.mini strong{display:block;margin:8px 0;font:700 19px Georgia,serif}.mini small{color:#687369}.mini.revealed{background:#eef0e6}.mini .miniback{display:none;text-align:left;line-height:1.5;font-size:13px}.mini.revealed .minifront{display:none}.mini.revealed .miniback{display:block}.mini .miniback strong{font-size:17px}.mini .miniback p{margin:8px 0}.gridwrap{overflow:auto;background:#fffdf7;border:1px solid #ddd7c7;border-radius:8px;padding:18px;margin:16px 0}.logic{border-collapse:collapse;font-size:13px;min-width:500px}.logic th{background:#e8e8d9;color:#183a30;font-size:12px}.logic th,.logic td{border:1px solid #c9cbbb;padding:7px;text-align:center}.logic th.rowhead{text-align:left;white-space:nowrap}.logic td button{width:31px;height:31px;background:#fff;border:1px solid #c8cec1;border-radius:4px;font-size:19px;cursor:pointer;color:#a73532}.logic td button.yes{color:#1b6b4b;background:#e3f1e7}.logic td button.no{background:#f9e8e6}.answerpanel{background:#fffdf7;border:1px solid #d9d5c8;padding:22px;border-radius:9px}.answerpanel select{padding:10px;border:1px solid #b5bcae;border-radius:5px;min-width:180px;max-width:100%;background:white}.answerfields{display:flex;gap:13px;flex-wrap:wrap;margin:16px 0}.answerfields label{display:flex;flex-direction:column;gap:6px;font-weight:700;font-size:13px}.feedback{font-weight:700;margin:13px 0;min-height:24px}.vocabgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.vocabcard{background:#fffdf7;border:1px solid #d9d5c8;border-radius:7px;padding:16px}.vocabcard strong{color:#183a30;display:block;margin-bottom:6px}.vocabcard span{color:#a73532}.smallnote{font-size:13px;color:#65736a;line-height:1.6}.case-panel[hidden]{display:none!important}
+
+/* Het Kompas homepage + dossierarchief */
+.hiddenpage{display:none!important}.homepage{background:var(--cream)}
+.homehero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr);min-height:420px;background:#173c32;color:white}.homephoto{background-size:cover;background-position:center;min-height:400px}.homewelcome{padding:58px clamp(25px,5vw,75px);position:relative;background:linear-gradient(135deg,#214d3e,#102c25)}.homewelcome h1{font:700 clamp(32px,4vw,54px) Georgia,serif;line-height:1.1;margin:17px 0}.homewelcome h1 em{color:#efd5a3}.homewelcome p{line-height:1.75;color:#e9eee5;font-size:15px}.homewelcome .stamp{display:inline-block;margin-top:12px;border:2px solid #d3b68c;padding:8px 16px;color:#eed4a4;transform:rotate(-5deg);font-weight:800;letter-spacing:2px}.homefeatures{max-width:1120px;margin:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;padding:45px 24px}.homefeature{text-align:left;border:1px solid #d8ceb7;border-radius:12px;background:#fffdf7;padding:26px 30px;box-shadow:0 7px 20px #17342915;display:flex;flex-direction:column;align-items:flex-start;gap:12px;color:#193b31;cursor:pointer}.homefeature:hover{transform:translateY(-3px);box-shadow:0 12px 26px #17342925}.homefeature strong{font:700 26px Georgia,serif}.homefeature span:not(.featureicon){line-height:1.65}.homefeature b{color:#a73532;margin-top:7px}.featureicon{font-size:36px;color:#a73532}.homedossier{max-width:1072px;margin:5px auto 70px;background:#183a30;color:white;border-radius:12px;padding:28px 40px;display:flex;align-items:center;justify-content:space-between;gap:25px}.homedossier h2{font:700 31px Georgia,serif;margin:8px 0}.homedossier p{max-width:610px;line-height:1.7}.homedossier .primarybtn{background:#a73532;border-color:#a73532}.seal{border:2px solid #dfc18b;border-radius:50%;width:160px;height:160px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#f2dfb6;font-size:12px;letter-spacing:1px;transform:rotate(9deg)}.seal strong{font:700 52px Georgia,serif}.listinghero{background:#183a30;color:white;padding:48px max(24px,calc((100vw - 1112px)/2))}.listinghero h1{font:700 52px Georgia,serif;margin:10px 0}.listinghero p{color:#e5e9df}.listingbody{max-width:1160px;margin:auto;padding:35px 24px 90px}.filterrow{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:16px}.filterrow label{font-weight:700;color:#183a30}.filterrow select{border:1px solid #c8c8b7;background:#fffdf7;color:#183a30;border-radius:6px;padding:10px 14px;margin-right:15px;font:inherit}.dossierlisting{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;margin-top:15px}.dossierpreview{background:#fffdf7;border:1px solid #d6cdb7;border-radius:10px;overflow:hidden;box-shadow:0 7px 18px #152a1d13}.dossierstamp{background:#244b3d;color:#f0e4cb;padding:14px 20px;font-size:12px;letter-spacing:1.5px;font-weight:800;display:flex;justify-content:space-between}.dossierstamp span{color:#d4e7bd;letter-spacing:0}.dossierpreviewbody{padding:24px}.dossierpreview h2{font:700 29px Georgia,serif;color:#193b31;margin:9px 0}.dossierpreview p{line-height:1.65;color:#526258}.dossiermeta{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}.dossiermeta span{border:1px solid #d7cfbd;border-radius:20px;padding:5px 10px;font-size:12px;color:#516457}.emptylisting{background:#fffdf7;padding:24px;border-radius:8px;border:1px solid #d9d5c8}@media(max-width:780px){.homehero{grid-template-columns:1fr}.homephoto{min-height:270px}.homewelcome{padding:35px 24px}.homefeatures{grid-template-columns:1fr}.homedossier{margin:0 20px 45px;padding:25px}.seal{display:none}.navlinks{justify-content:center}.navlinks button{font-size:12px;padding:8px 10px}}
+/* Dossier 001: afstreepbare bewijslijst */
+.evidence{display:block;margin:18px 0 36px}.evidence-list{list-style:none;padding:0;margin:0;display:grid;gap:10px;max-width:950px}
+.evidence-list li{margin:0}.evidence-item{display:flex;align-items:flex-start;gap:15px;background:#fffdf7;border:1px solid #d9d5c8;border-left:4px solid #a73532;border-radius:8px;padding:16px 18px;cursor:pointer;box-shadow:0 2px 7px #152a1d0a}
+.evidence-item input{appearance:none;flex:0 0 23px;width:23px;height:23px;margin:2px 0 0;border:2px solid #9eaaa0;border-radius:5px;background:white;cursor:pointer;display:grid;place-items:center}
+.evidence-item input:checked{background:#183a30;border-color:#183a30}.evidence-item input:checked:after{content:'✓';font-size:17px;color:white;font-weight:bold}
+.evidence-copy{display:block;line-height:1.55}.evidence-copy strong{display:block;font-size:12px;color:#a73532;letter-spacing:1px;margin-bottom:5px}.evidence-copy>span{display:block}
+.evidence-item:has(input:checked){opacity:.6;background:#f0f0e9}.evidence-item input:checked+.evidence-copy{text-decoration:line-through;text-decoration-thickness:1px}
+/* Omgekeerde L: twee roosters boven, derde links onder */
+.gridwrap.inverted-l{display:grid;grid-template-columns:max-content max-content;gap:0;align-items:start;justify-content:start;overflow:auto;max-width:100%;padding:15px}
+.inverted-l>div{padding:12px;border:1px solid #d7dacb;background:#fffdf7}.inverted-l>div:nth-child(1){grid-column:1;grid-row:1;border-radius:8px 0 0 0}.inverted-l>div:nth-child(2){grid-column:2;grid-row:1;border-radius:0 8px 0 0;border-left:0}.inverted-l>div:nth-child(3){grid-column:1;grid-row:2;border-top:0;border-radius:0 0 8px 8px}
+.inverted-l .logic{min-width:0;font-size:12px}.inverted-l .logic th,.inverted-l .logic td{padding:5px}.inverted-l .logic td button{width:29px;height:29px}
+.inverted-l h3{font-size:14px;margin:0 0 10px;color:#183a30}
+/* Netjes gerangschikte kaartachterkanten */
+.mini .miniback{text-align:left}.mini .mini-category{display:block;font-size:10px;font-weight:800;letter-spacing:1.1px;text-transform:uppercase;color:#a73532;margin:10px 0 2px}
+.mini .miniback .mini-name{display:block;font:700 20px Georgia,serif;color:#183a30;border-bottom:1px solid #d8d8c8;padding-bottom:9px;margin:4px 0 10px}
+.mini-facts{margin:0;display:grid;gap:0}.mini-facts>div{display:flex;justify-content:space-between;gap:8px;border-bottom:1px solid #e1e1d6;padding:5px 0;font-size:12px}.mini-facts dt{font-weight:700;color:#607064}.mini-facts dd{margin:0;text-align:right;color:#24372d}.mini .mini-description{font-size:12px;line-height:1.5;margin:11px 0;padding-top:8px;border-top:1px solid #d8d8c8}
+/* Archief: feiten per regel */
+.face.back .personfacts{display:grid;grid-template-columns:1fr 1fr;gap:7px 9px;margin-top:10px}.face.back .personfact{display:flex;flex-direction:column;gap:3px;background:#f1f0e7;padding:7px 8px;border-radius:5px;font-size:12px}.face.back .personfact strong{font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:#68766a}
+.helpsteps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:20px}.helpsteps article{background:#fffdf7;border:1px solid #d9d5c8;border-top:4px solid #183a30;border-radius:8px;padding:18px}.helpsteps b{color:#183a30}.helpsteps p{line-height:1.6;margin-bottom:0}.helpnote{padding:16px;border-left:4px solid #a73532;background:#f1eee4}
+@media(max-width:720px){.gridwrap.inverted-l{grid-template-columns:max-content max-content}.inverted-l>div{padding:7px}.inverted-l .logic th,.inverted-l .logic td{padding:3px}.inverted-l .logic td button{width:25px;height:25px}}
+
+/* Eén doorlopend L-vormig onderzoeksraster, zonder losse tabellen */
+.gridwrap.unified-wrap{display:block;overflow-x:auto;max-width:100%;padding:12px 0 16px}
+.unified-logic{border-collapse:collapse;border-spacing:0;background:#fff;min-width:720px;margin:0;table-layout:fixed}
+.unified-logic th,.unified-logic td{border:1px solid #c7c9bb;padding:4px;text-align:center;height:39px}
+.unified-logic .corner{width:125px;min-width:125px}
+.unified-logic .grouphead{background:#183a30;color:#fff;font-size:13px;letter-spacing:.04em}
+.unified-logic .columnhead{background:#e9e9dc;color:#183a30;font-size:11px;min-width:67px;overflow-wrap:anywhere}
+.unified-logic .rowhead{background:#e9e9dc;color:#183a30;font-size:12px;text-align:left;padding:7px;white-space:nowrap}
+.unified-logic td button{display:block;width:30px;height:30px;margin:auto;padding:0;border-radius:4px;border:1px solid #c7c9bb;background:#fff;font-weight:bold;font-size:20px;cursor:pointer;color:#183a30}
+.unified-logic td button.no{color:#a73532;background:#faeae6}.unified-logic td button.yes{color:#1b6b4b;background:#e2f3e8}
+.unified-logic .sectionbreak{border-left:3px solid #183a30}
+.unified-logic .rowbreak{border-top:3px solid #183a30}
+.unified-logic .emptyquadrant{border:0;background:transparent}
+
+/* Compacte persoonskaarten in het dossier */
+.casecards{gap:12px!important}
+.casecards .mini{min-height:175px;padding:10px 9px}
+.casecards .mini .portrait{height:85px;max-width:88px}
+.casecards .mini strong{font-size:16px;margin:6px 0}
+.casecards .mini .miniback{font-size:11px;line-height:1.3}
+.casecards .mini .miniback strong{font-size:14px}
+.casecards .mini-facts>div{font-size:10px;padding:3px 0;gap:5px}
+.casecards .mini .mini-description{font-size:10.5px;line-height:1.4;margin:7px 0;padding-top:5px}
+.casecards .mini .mini-category{font-size:10px}
+/* Modale vensters: onderzoek blijft op dezelfde pagina */
+.case-modal[hidden]{display:none!important}
+.case-modal{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:22px}
+.case-modal-backdrop{position:absolute;inset:0;background:rgba(12,31,25,.76)}
+.case-modal-dialog{position:relative;background:#fffdf7;border:3px solid #173c32;border-radius:12px;box-shadow:0 20px 80px #0006;width:min(900px,100%);max-height:88vh;overflow-y:auto;padding:32px 30px}
+.case-modal .case-panel{display:block!important}
+.modal-close{position:sticky;float:right;top:0;z-index:2;border:0;background:#a73532;color:white;border-radius:50%;width:39px;height:39px;font-size:27px;cursor:pointer}
+body.modal-open{overflow:hidden}
+@media(max-width:600px){.case-modal{padding:10px}.case-modal-dialog{padding:18px 14px;max-height:94vh}}
+
+/* V11: vaste hoogte voor alle dossierkaarten, ongeacht de zichtbare zijde */
+.casecards{align-items:stretch}
+.casecards .mini{height:248px;min-height:248px;max-height:248px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.casecards .mini .minifront{width:100%}
+.casecards .mini .miniback{width:100%;max-height:100%;overflow-y:auto;overscroll-behavior:contain}
+.casecards .mini.revealed{justify-content:flex-start}
+.casecards .mini .mini-category{display:block;margin:2px 0 5px}
+.casecards .mini .mini-name{margin:4px 0 6px}
+.casecards .mini .portrait{height:92px;max-width:94px}
+.casecards .mini-facts{margin:5px 0}
+
+/* Compact bewijsnotitieblok: doorlopende regels, smalle tussenruimte */
+.evidence{margin:14px 0 30px}
+.evidence-list{display:block;max-width:940px;margin:0;padding:12px 0 12px 0;list-style:none;background:repeating-linear-gradient(to bottom,#fffefa 0px,#fffefa 43px,#dce6df 44px,#fffefa 45px);border:1px solid #d7d9ce;border-left:5px solid #b34a45;border-radius:5px;box-shadow:3px 4px 0 #e5e5dc,6px 7px 0 #d6d7cc}
+.evidence-list li{margin:0;border-bottom:1px solid #d9e2dc}
+.evidence-list li:last-child{border-bottom:0}
+.evidence-item{display:flex;align-items:flex-start;gap:12px;padding:10px 16px 11px;background:transparent;border:0;border-radius:0;box-shadow:none;min-height:0}
+.evidence-item input{flex:0 0 18px;width:18px;height:18px;margin:3px 0 0;border-radius:3px;border-width:1.5px}
+.evidence-copy{line-height:1.42;font-size:14px}
+.evidence-copy strong{display:inline;font-size:11px;letter-spacing:.6px;margin:0 9px 0 0;white-space:nowrap}
+.evidence-copy>span{display:inline}
+.evidence-item:has(input:checked){background:#e7ebe5a8;opacity:.58}
+.evidence-item input:checked+.evidence-copy{text-decoration:line-through}
+@media(max-width:600px){.evidence-item{padding:10px 11px;gap:9px}.evidence-copy strong{display:block;margin:0 0 3px}}
+
+/* Dossierkaarten: exact dezelfde vormtaal en afmetingen als het personenarchief */
+.casecards{grid-template-columns:repeat(auto-fill,minmax(216px,1fr));gap:22px}
+.casecards .dossier-card{height:340px;min-height:0;padding:0;overflow:visible;background:none;border:0;box-shadow:none;text-align:left}
+.casecards .dossier-card .face{overflow:hidden}
+.casecards .dossier-card .back{overflow-y:auto}
+.casecards .dossier-card .description{display:block;line-height:1.45;margin-top:8px}
+.casecards .dossier-card .personality{display:block}
+.casecards .dossier-card .personfacts{display:grid;grid-template-columns:1fr 1fr;gap:7px 9px;margin-top:11px}
+.casecards .dossier-card .personfact{display:flex;flex-direction:column;gap:3px;background:#f1f0e7;padding:7px 8px;border-radius:5px;font-size:12px}
+.casecards .dossier-card .personfact strong{font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:#68766a}
+.casecards .dossier-card .back .turnhint{padding-top:9px}
+.casecards .dossier-card .portrait{display:grid;width:146px;height:169px;margin:14px 0 9px}
+.casecards .dossier-card .portrait svg{width:142px;height:160px}
+@media(max-width:600px){
+ .casecards{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .casecards .dossier-card{height:315px}
+ .casecards .dossier-card .portrait{width:115px;height:145px}
+ .casecards .dossier-card .portrait svg{width:110px;height:140px}
+}
+/* Bewijsnotities: één dossierblad met handgeschreven accenten en compacte regels */
+.evidence-list{position:relative;display:block;max-width:980px;margin:21px 0 37px;padding:18px 19px 20px 48px;
+ background:repeating-linear-gradient(to bottom,#fffdf5 0,#fffdf5 37px,#e9e7da 38px,#fffdf5 39px);
+ border:1px solid #d8d1bd;border-radius:3px 13px 13px 3px;
+ box-shadow:4px 6px 0 #e2dccc,0 14px 27px #233b2b16;
+ transform:rotate(-.25deg)}
+.evidence-list:before{content:'';position:absolute;top:0;bottom:0;left:36px;border-left:2px solid #cf8c82;opacity:.7}
+.evidence-list:after{content:'ONDERZOEKSNOTITIES';position:absolute;right:18px;top:-13px;padding:4px 12px;
+ background:#193b30;color:#f8f0d9;letter-spacing:1.6px;font-size:9px;font-weight:800;
+ transform:rotate(2deg);box-shadow:2px 3px 0 #d3c8a8}
+.evidence-list li{margin:0;border-bottom:1px dashed #d6d3c7}
+.evidence-list li:last-child{border-bottom:0}
+.evidence-item{display:flex;align-items:flex-start;gap:14px;padding:13px 11px 13px 0;
+ background:transparent;border:0;border-radius:0;box-shadow:none;transition:background .15s}
+.evidence-item:hover{background:#f4efdf88}
+.evidence-item input{flex-basis:21px;width:21px;height:21px;border-radius:2px;border-color:#9b9f8d;background:#fffdf5}
+.evidence-copy{font-size:14px;line-height:1.55}
+.evidence-copy strong{display:block;font-size:10px;letter-spacing:1.4px;color:#a04c3e;margin-bottom:3px}
+.evidence-item:has(input:checked){background:transparent;opacity:.53}
+@media(max-width:600px){.evidence-list{padding-left:38px}.evidence-list:before{left:29px}.evidence-copy{font-size:13px}}
+
+
+:root{--forest:#14543e;--forest2:#103d30;--cream:#f5efdf;--paper:#fffaf0;--red:#9d5847;--ink:#254538;--muted:#627568;--line:#d8cbb3}
+body{background:var(--cream);color:var(--ink)}
+header{background:var(--forest2)}
+.brandmark{border-color:#d6b78b;color:#f4d8aa}
+.hero,.homehero,.listinghero,.casehero{background-color:#14543e!important}
+button.primarybtn,.primarybtn{background:#14543e!important;border-color:#14543e!important;color:#fff!important}
+button.primarybtn:hover,.primarybtn:hover{background:#1d684c!important}
+.kicker,.dossierstamp{color:#a7664f}
+.homehero .kicker,.listinghero .kicker,.casehero .kicker{color:#f0d6a6}
+.dossierpreview,.vocabcard,.archivecard,.casecards .flipcard{border-color:#d3c3a7}
+.dossierspage,.homepage,.archivepage{background:#f5efdf}
+/* The case is the exact new interactive desk, with all original case controls
+   kept in the DOM only for compatibility with the existing site scripts. */
+#casepage>.casehero,#casepage>.casebody{display:none!important}
+#casepage{padding:20px clamp(8px,2vw,26px) 40px;background:#f5efdf}
+.integrated-board{max-width:1190px;margin:0 auto;border:10px solid #8b654a;border-radius:19px;overflow:hidden;background:#f5efdf;box-shadow:0 14px 30px #372b1b30}
+.integrated-board iframe{width:100%;height:1340px;border:0;display:block;background:#f5efdf}
+@media(max-width:760px){#casepage{padding:8px 4px 25px}.integrated-board{border-width:5px;border-radius:10px}.integrated-board iframe{height:1390px}}
+
+/* V16: dossier zonder tweede buitenkader; één doorlopende groentint */
+body > header, body > header nav{background:#14543e!important}
+#casepage{padding:0 0 36px!important;background:#f5efdf!important}
+#casepage .integrated-board{max-width:none!important;width:100%!important;margin:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;overflow:visible!important;background:transparent!important}
+#casepage .integrated-board iframe{width:100%!important;border:0!important;display:block!important;background:#f5efdf!important}
+@media(max-width:760px){#casepage{padding:0 0 20px!important}}
+
+
+/* V17: exactly one emerald green across site headers */
+body>header,body>header nav,.hero,.homehero,.homewelcome,.listinghero,.casehero{background:#14543e!important;background-color:#14543e!important;background-image:none!important}
+#casepage .integrated-board iframe{background:#f5efdf!important}
+body.np-modal-open{overflow:hidden!important}
+body.np-modal-open #dossier-game{position:fixed!important;inset:0!important;width:100vw!important;height:100dvh!important;z-index:99999!important;border:0!important;background:transparent!important}
+body.np-modal-open .integrated-board{position:static!important}
+@supports not (height:100dvh){body.np-modal-open #dossier-game{height:100vh!important}}
+
+/* V18: one continuous document scroll; iframe grows to its content. */
+#casepage .integrated-board iframe{height:1800px;min-height:0;overflow:hidden;}
+body:not(.np-modal-open) #dossier-game{position:static!important;}
+
+
+/* V19: restore the v15 homepage palette, without changing the school image. */
+body>header,body>header nav{background:#103d30!important;background-image:none!important}
+#homepage,.homepage,.dossierspage,.archivepage{background-color:#f5efdf!important}
+.homehero,.homewelcome,.hero,.listinghero{background:#14543e!important;background-image:none!important}
+/* Dossier green is a touch deeper than the homepage hero. */
+#casepage{background:#f5efdf!important}
+
+/* v20 homepage and print archive refinements */
+.homewelcome h1{font-size:clamp(31px,3.55vw,50px);letter-spacing:-.6px}
+.homefeature{gap:12px}.homefeature strong{margin-top:2px}
+.printpage{background:#f5efdf;min-height:65vh}.printpage.hiddenpage{display:none!important}
+.print-list{max-width:1100px;margin:0 auto;padding:42px 24px 100px}
+.print-entry{background:#fffdf7;border:1px solid #d8ceb7;border-radius:13px;padding:30px 34px;display:flex;gap:28px;align-items:center;justify-content:space-between;box-shadow:0 8px 20px #17342916}
+.print-entry h2{font:700 31px Georgia,serif;color:#173d30;margin:12px 0}
+.print-entry p{color:#53665a;line-height:1.6;margin:0 0 13px}
+.print-entry small{color:#7a776b}.print-entry a.primarybtn{display:inline-block;white-space:nowrap;text-decoration:none;cursor:pointer}
+@media(max-width:760px){.print-entry{flex-direction:column;align-items:flex-start}.homewelcome h1{font-size:clamp(30px,7vw,44px)}}
+
+
+
+/* V21 – homepage photograph framing, based on the earlier close-up. */
+.homehero,
+.homewelcome {
+  background-color:#103d30 !important;
+  background-image:none !important;
+}
+.homephoto {
+  background-color:#103d30 !important;
+  /* Zoom into the original school photograph so the two stray shapes
+     baked into its bottom edge are outside the visible crop. */
+  background-size:cover !important;
+  background-position:center 48% !important;
+  background-repeat:no-repeat !important;
+}
+@media (max-width:760px) {
+  .homephoto {background-size:cover !important; background-position:center 48% !important;}
+}
+
+
+/* V23: distinct, coordinated homepage greens; dossier styling unchanged. */
+body > header, body > header nav { background:#102b24 !important; background-image:none !important; }
+#homepage .homehero, #homepage .homewelcome { background:#214b3d !important; background-color:#214b3d !important; background-image:none !important; }
+
+
+#floating-research[hidden]{display:none!important}
+#floating-research{position:fixed;z-index:800;top:10px;left:50%;transform:translateX(-50%);width:min(690px,calc(100% - 28px));box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:9px 14px;border:1px solid #9c8560;border-radius:13px;background:#104733;box-shadow:0 8px 25px #142d2490;color:#f7edda}
+#floating-research .floating-label{font-size:10px;font-weight:700;letter-spacing:.06em;white-space:nowrap}
+#floating-research .floating-buttons{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+#floating-research button{cursor:pointer;border:1px solid #d4c4a6;background:#f8f0df;color:#174432;border-radius:7px;padding:9px 10px;font-family:inherit;font-size:12px;font-weight:700;white-space:nowrap}
+#floating-research button:hover,#floating-research button:focus-visible{background:#e6d5b7}
+@media(max-width:670px){#floating-research{flex-direction:column;gap:5px;padding:7px}#floating-research button{font-size:11px;padding:7px 8px}}
+
+
+/* V26: preserve the research table's space while a popup is open. */
+body.np-modal-open #casepage .integrated-board{min-height:var(--np-board-height,1800px)!important;}
+body.np-modal-open{overflow:hidden!important;overflow-anchor:none!important;}
+
+
+/* V27: Never detach the dossier iframe from document flow when a popup opens.
+   The modal inside the iframe already follows the visible viewport via
+   --viewport-shift, so fixing the entire iframe caused the page to jump. */
+body.np-modal-open{overflow-y:auto!important;overflow-x:hidden!important;overflow-anchor:auto!important;}
+body.np-modal-open #dossier-game{position:static!important;inset:auto!important;width:100%!important;height:var(--np-stable-frame-height,1800px)!important;z-index:auto!important;background:#f5efdf!important;}
+body.np-modal-open #casepage .integrated-board{min-height:0!important;}
+body.np-modal-open #floating-research{display:none!important;}
+
+.site-nav a{color:#fff;text-decoration:none;font-size:13px;font-weight:700;padding:9px 13px;border:1px solid #8aa296;border-radius:22px}
+.site-nav a:hover,.site-nav a:focus-visible,.site-nav a[aria-current="page"]{background:#e8cf9c;color:#17362c;border-color:#e8cf9c}
+.homefeature{text-decoration:none}

@@ -1,0 +1,592 @@
+
+:root{--green:#17382e;--ink:#233b33;--red:#9d4b39;--paper:#fffdf7;--cream:#f4efe2;--line:#c9c1a9}*{box-sizing:border-box}body{margin:0;background:#e6dfcd;color:var(--ink);font-family:Georgia,serif}header{background:var(--green);color:#fffdf7;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}header strong{font-size:23px}header small{display:block;color:#d6d5bd;margin-top:5px}.toolbar{display:flex;gap:8px;flex-wrap:wrap}button{font:inherit;cursor:pointer}.toolbar button,.modal-actions button{background:var(--paper);border:1px solid #bdb49e;border-radius:8px;padding:9px 12px;color:var(--green);font-weight:bold}.toolbar button:hover,.modal-actions button:hover{background:#efe6d3}.hint{background:#fffdf7;padding:11px 23px;font-size:14px;border-bottom:1px solid var(--line)}.workspace{padding:20px;overflow:auto}.tabletop{position:relative;width:1100px;height:870px;max-width:none;border:11px solid #8b654a;border-radius:22px;background:repeating-linear-gradient(95deg,#e4d3b1 0,#e4d3b1 110px,#e1cfaa 112px,#e9d8b6 230px);box-shadow:inset 0 0 0 2px #b7976b,0 10px 25px #57432b33;touch-action:pan-x pan-y}.tabletop:before{content:'HET KOMPAS  ·  ONDERZOEKSTAFEL';position:absolute;right:18px;bottom:14px;color:#866c4b;font-size:12px;letter-spacing:3px}.gamecard{position:absolute;width:154px;height:244px;touch-action:none;user-select:none;cursor:grab;filter:drop-shadow(2px 5px 4px #55432e55);z-index:1}.gamecard.dragging{cursor:grabbing;z-index:100!important;filter:drop-shadow(5px 11px 8px #55432e77)}.cardinner{height:100%;width:100%;position:relative;transform-style:preserve-3d;transition:transform .32s}.gamecard.flipped .cardinner{transform:rotateY(180deg)}.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--paper);border:2px solid var(--green);border-radius:9px;display:flex;flex-direction:column;align-items:center;padding:10px 9px 24px;overflow:hidden}.face.front{background:linear-gradient(#fffdf8,#f9f6ec)}.face.back{transform:rotateY(180deg);align-items:stretch;gap:5px}.eyebrow,.backtitle{font-family:Arial,sans-serif;letter-spacing:1.1px;font-size:8px;color:var(--red);font-weight:800;text-align:center}.portrait{height:145px;width:132px;display:flex;align-items:center;justify-content:center;position:relative;isolation:isolate}.portrait:before{content:'';position:absolute;width:112px;height:112px;border-radius:50%;background:#e9dfc6;z-index:-1;top:13px}.portrait svg{width:104px;height:125px;display:block;overflow:visible}.cardname,.backname{font-size:17px;font-weight:bold;text-align:center;color:var(--green);margin-top:3px}.cardmeta{font-size:11px;color:#746d5f;margin-top:4px}.backname{text-align:left;font-size:16px}.rule{height:1px;background:#d9ceb8;margin:3px 0}.detailtag{color:var(--red);font-size:10px;font-weight:bold}.personality{font-weight:bold;font-size:11px}.description{font-size:10px;line-height:1.35}.personfacts{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-top:auto}.personfact{font:9px Arial,sans-serif;background:#f1eee4;border-radius:4px;padding:4px 3px;overflow-wrap:anywhere}.personfact strong{display:block;font-size:8px;text-transform:uppercase;color:#7c7467;margin-bottom:2px}.flipbtn{position:absolute;right:8px;bottom:7px;z-index:2;border:1px solid #b5aa92;background:#fffdf7;border-radius:50%;width:26px;height:26px;color:var(--green);font-size:19px;line-height:20px}.flipbtn:hover{background:#e9dfc6}.modal{position:fixed;inset:0;background:#172d25b8;display:none;z-index:999;align-items:center;justify-content:center;padding:14px}.modal.open{display:flex}.sheet{position:relative;background:var(--paper);border:4px double var(--green);border-radius:12px;width:min(96vw,940px);max-height:92vh;overflow:auto;padding:24px;box-shadow:0 14px 50px #0005}.sheet h2{color:var(--green);margin:0 45px 8px 0}.sheet p{line-height:1.55}.close{position:absolute;right:15px;top:12px;background:transparent;border:0;font-size:27px;color:var(--red)}.modal-actions{display:flex;justify-content:space-between;gap:10px;margin-top:14px}.clue{display:flex;gap:12px;padding:13px 8px;border-bottom:1px solid #ded7c8;font-size:14px;line-height:1.55}.clue input{accent-color:var(--red);width:18px}.clue:has(input:checked) span{opacity:.55;text-decoration:line-through}.logicwrap{overflow-x:auto}.logic{border-collapse:collapse;margin:12px 0 18px;font:12px Arial,sans-serif}.logic th,.logic td{border:1px solid #bbb49e;padding:3px;text-align:center}.logic th{background:#eee8d8}.logic th.rowhead{text-align:left;min-width:115px}.logic td button{width:31px;height:31px;border:0;background:#fff;color:var(--green);font-weight:bold;font-size:18px}.logic td button[data-v="no"]{color:#a04435;background:#f8e6e1}.logic td button[data-v="yes"]{color:#256044;background:#e2f0e1}.logic td.block{background:#e6dfce}.small{font:12px Arial,sans-serif;color:#6d6d61}.answer{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.answer label{font-weight:bold;font-size:12px}.answer select{display:block;margin-top:6px;width:100%;padding:9px;border:1px solid var(--line);background:#fff}.result{margin-top:12px;font-weight:bold}.pill{background:#eadfca;padding:4px 9px;border-radius:15px;font-size:12px}.boardlegend{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.boardlegend span{background:#fff8e9;border:1px solid #b8a689;border-radius:5px;padding:5px 9px;font-size:12px}@media(max-width:600px){header strong{font-size:18px}.workspace{padding:9px}.sheet{padding:15px}.answer{grid-template-columns:1fr}}
+
+/* Onderzoeksomgeving — heldere bediening en rijkere kleuren */
+body{background:#e8e3d8}
+header{padding:15px 28px;background:#14543e;border-bottom:5px solid #d59b63}
+header strong{font-family:Georgia,serif}
+.hint{background:#fff9e9;border-bottom:0;color:#4c594e;padding:12px 26px;font-family:Arial,sans-serif;font-size:13px}
+.workspace{padding:20px 24px 35px;max-width:1200px;margin:0 auto}
+.deskpanel{width:1100px;max-width:none;display:flex;align-items:center;justify-content:space-between;gap:25px;background:#14543e;border:6px solid #876248;border-bottom:0;border-radius:18px 18px 0 0;color:white;padding:17px 24px 20px;box-shadow:0 7px 18px #584a3644}
+.deskpanel-head{max-width:320px}.desk-kicker{font:800 10px Arial,sans-serif;letter-spacing:1.8px;color:#f4c58e}
+.deskpanel h2{font-size:22px;margin:5px 0 6px;color:#fff9e9}.deskpanel p{font:12px/1.5 Arial,sans-serif;margin:0;color:#e2e6d8}
+.desktools{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:690px;flex:1}
+.desktools button{border:1px solid #e3c99f;background:#fff7e6;color:#173c39;min-height:47px;padding:8px 10px;border-radius:9px;font:700 12px Arial,sans-serif;box-shadow:0 3px 0 #aa8a66;transition:transform .12s,background .12s}
+.desktools button:hover{background:#f9d99d;transform:translateY(-2px)}
+.desktools button[data-open="bewijs"]{background:#f3d1a4}
+.desktools button[data-open="rooster"]{background:#cde5d8}
+.desktools button[data-open="woordenlijst"]{background:#dbe6f2}
+.desktools button[data-open="antwoord"]{background:#f4d1c9}
+.desktools button#reset{background:#e4e4d9;color:#475249}
+.tabletop{border-top:3px solid #c6a17a;border-radius:0 0 20px 20px;height:975px;background:repeating-linear-gradient(95deg,#e7d5b2 0,#e7d5b2 110px,#e3cfa9 112px,#ebd9b8 230px)}
+.gamecard{width:154px;height:270px}
+.face{padding:11px 9px 12px;border-color:#244b43}
+.face.front{background:#fffefa;border-top:6px solid #3c7567}
+.face.back{padding:9px 9px 11px;gap:3px;background:#fffefa;border-top:6px solid #c57a5b}
+.eyebrow,.backtitle{color:#b56849;font-size:8px}
+.portrait{height:161px}.portrait:before{background:#e9dfc6}
+.cardname{font-size:18px;margin-top:5px}.cardmeta{font:11px Arial,sans-serif;color:#60776c}
+.backname{font-size:17px;margin-top:1px}.detailtag{font-size:10px}.personality{font-size:11px}
+.description{font:10.5px/1.3 Arial,sans-serif;flex-shrink:1;overflow:visible}
+.personfacts{gap:4px;margin-top:auto;flex-shrink:0}
+.personfact{font:9px/1.18 Arial,sans-serif;padding:5px 4px;background:#eaf0e8;overflow-wrap:break-word}
+.personfact strong{font-size:7.5px;margin-bottom:3px}
+.gamecard[data-type="apparaat"] .personfact{background:#f5e8d8}
+.gamecard[data-type="app"] .personfact{background:#e6e9f3}
+.gamecard[data-type="persoon"] .face.front{border-top-color:#3c7567}
+.gamecard[data-type="apparaat"] .face.front{border-top-color:#bd7a45}
+.gamecard[data-type="app"] .face.front{border-top-color:#6b79ad}
+.flipbtn{bottom:8px;right:8px;width:29px;height:29px;background:#fffdf5}
+.boardlegend span{background:#fffaf0;border-left:4px solid #5d8b75}
+.boardlegend span:nth-child(2){border-left-color:#bd7a45}.boardlegend span:nth-child(3){border-left-color:#6b79ad}
+#vocabsearch{width:100%;border:1px solid #b8b7a5;border-radius:8px;padding:12px 14px;font:14px Arial,sans-serif;margin:8px 0 18px;background:white}
+.vocabgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.vocabentry{padding:10px 13px;background:#f3f4e9;border:1px solid #d4d5c5;border-left:4px solid #8ba99a;border-radius:6px;font:13px Arial,sans-serif}
+.vocabentry strong{display:block;color:#193d36;margin-bottom:5px}.vocabentry span{color:#a05e43}
+@media(max-width:680px){.vocabgrid{grid-template-columns:1fr}.deskpanel{flex-direction:column;align-items:stretch}.desktools{max-width:none;grid-template-columns:repeat(2,1fr)}.deskpanel-head{max-width:none}}
+
+
+/* Dossierverhaal zichtbaar boven de tafel */
+.deskpanel{align-items:stretch;flex-direction:column;gap:17px}
+.deskpanel-head{max-width:100%;width:100%}
+.deskpanel-head h2{margin:7px 0 12px;font-size:clamp(23px,3vw,34px)}
+.deskpanel-head p{max-width:850px;line-height:1.58;margin:7px 0;color:#31493d;font-size:15px}
+.deskpanel-head p:last-child{margin-top:12px}
+.desktools{max-width:none;display:flex;flex-wrap:wrap;gap:11px}
+.desktools button{flex:1 1 185px}
+/* Twee rustige, functionele knoppen onderaan het speelbord */
+.tabletop{height:920px}
+.boardcontrols{position:absolute;bottom:21px;left:20px;right:20px;display:flex;align-items:center;justify-content:space-between;gap:14px;z-index:120;pointer-events:none}
+.boardcontrols button{pointer-events:auto;font-family:Arial,sans-serif;cursor:pointer}
+.boardreset{background:#f5ecdcdf;border:1px solid #a99174;border-radius:8px;color:#67563f;padding:9px 13px;font-size:12px}
+.boardreset:hover{background:#fff9ee}
+.boardfinish{background:#a5443e;color:#fff;border:2px solid #fff5e5;border-radius:12px;padding:15px 24px;font-size:19px;font-weight:800;box-shadow:0 5px 0 #722c2a,0 9px 18px #4a2c2255;letter-spacing:.4px}
+.boardfinish:hover{background:#bd5149;transform:translateY(-2px)}
+.tabletop:before{bottom:85px}
+@media(max-width:680px){.desktools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.boardfinish{font-size:17px}}
+
+/* Nieuwe frisse onderzoekstafel: indigo, koraal, mint en zonnig geel */
+:root{--green:#302c76;--ink:#242345;--red:#ef536c;--paper:#ffffff;--cream:#f1f4ff;--line:#cdd4f0}
+body{background:#eef1ff;color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+header{background:#29245e;color:#fff;padding:17px 28px;border-bottom:5px solid #ffcf66}
+header strong{font-family:Arial,sans-serif;letter-spacing:-.6px}
+header small{color:#c6c7f7}
+.hint{background:#e2f8f2;color:#235d67;border-bottom:1px solid #b6e7dd}
+.workspace{max-width:1200px}
+.deskpanel{background:#fff;border:5px solid #6255bd;border-bottom:0;border-radius:22px 22px 0 0;box-shadow:0 6px 25px #28256015;padding:24px 28px 20px}
+.desk-kicker{color:#eb506a;font-weight:900}
+.deskpanel h2{color:#29245e;font-family:Arial,sans-serif;font-weight:900;letter-spacing:-1px}
+.deskpanel-head p{color:#454567}
+.desktools button{border:2px solid #322c72;border-radius:13px;box-shadow:0 4px 0 #302b6d;color:#29245e;font-weight:800;font-size:14px}
+.desktools button[data-open="bewijs"]{background:#ffcf70}
+.desktools button[data-open="rooster"]{background:#91e4d5}
+.desktools button[data-open="woordenlijst"]{background:#c7bbff}
+.desktools button:hover{background:#fff0a8}
+.tabletop{background-color:#e6e5fb;background-image:linear-gradient(90deg,#ffffff60 1px,transparent 1px),linear-gradient(#ffffff60 1px,transparent 1px),radial-gradient(ellipse at 80% 15%,#e9cfff 0,transparent 52%),radial-gradient(ellipse at 12% 88%,#c3f4ed 0,transparent 50%);background-size:38px 38px,38px 38px,auto,auto;border:7px solid #6255bd;border-top:3px solid #6255bd;box-shadow:0 14px 30px #35307624}
+.tabletop:before{color:#7d78b4;font-weight:800}
+.gamecard{filter:drop-shadow(2px 5px 3px #3c387030)}
+.gamecard.dragging{filter:drop-shadow(5px 12px 9px #3c387055)}
+.face{border:2px solid #5147a4;border-radius:12px}
+.face.front{background:#fff;border-top:7px solid #6557c9}
+.face.back{background:#fff;border-top:7px solid #ef536c}
+.eyebrow,.backtitle{color:#e14a69}
+.cardname,.backname{color:#302c76}
+.cardmeta{color:#65638a}
+.portrait:before{background:#e4dfff}
+.personfact{background:#f0efff}
+.personfact strong{color:#6c5f9e}
+.gamecard[data-type="persoon"] .face.front{border-top-color:#6557c9}
+.gamecard[data-type="apparaat"] .face.front{border-top-color:#ffaf58}
+.gamecard[data-type="app"] .face.front{border-top-color:#31bfb3}
+.gamecard[data-type="apparaat"] .personfact{background:#fff1df}
+.gamecard[data-type="app"] .personfact{background:#e0f9f3}
+.flipbtn{color:#342b80;background:#f5f2ff;border-color:#b9b0ef}
+.flipbtn:hover{background:#ddd6ff}
+.boardfinish{background:#ef536c;border-color:#fff;box-shadow:0 5px 0 #b83254,0 9px 18px #4a2c2250}
+.boardfinish:hover{background:#ff6c83}
+.boardreset{background:#ffffffd9;border:1px solid #a8a0d6;color:#514c82}
+.boardlegend span{background:white;border:1px solid #d8d4f3;border-left:5px solid #6557c9;border-radius:8px;color:#383469}
+.boardlegend span:nth-child(2){border-left-color:#ffaf58}
+.boardlegend span:nth-child(3){border-left-color:#31bfb3}
+.modal{background:#22204ba8}
+.sheet{border:3px solid #6557c9;background:#fff;border-radius:20px;box-shadow:0 22px 65px #211b5b55}
+.sheet h2{color:#302c76;font-family:Arial,sans-serif}
+.close{color:#eb506a}
+.modal-actions button,.toolbar button{color:#302c76}
+.clue{border-bottom-color:#e2e0f2}
+.clue input{accent-color:#eb506a}
+.logic{font:12px Arial,sans-serif;border-collapse:separate;border-spacing:2px}
+.logic th,.logic td{border:1px solid #d7d5f2;border-radius:5px;padding:2px}
+.logic th{background:#e6e1ff;color:#342c81;font-weight:800}
+.logic th.rowhead{background:#e3f8f4;color:#255e69}
+.logic td button{color:#322c79;border-radius:4px}
+.logic td button[data-v="no"]{color:#d63e64;background:#ffe3eb}
+.logic td button[data-v="yes"]{color:#168b7b;background:#d6f8ed}
+.logic td.block{background:transparent;border:0}
+.vocabentry{background:#f7f4ff;border-color:#e1dcfa;border-left-color:#8b78eb}
+.vocabentry strong{color:#302c76}
+.vocabentry span{color:#d54d6b}
+.pill{background:#e5e1ff}
+/* Compact L-vorm: 4 kolommen x 8 rijen, plus 4 kolommen x 4 rijen vanaf boven */
+.logic th.rowhead{min-width:126px}
+.logic td button{width:35px;height:35px}
+.logic td.emptycorner{border:0;background:transparent}
+.logicwrap{max-width:100%}
+
+/* V5 — gedempt Japans kleurenpalet: vermiljoen, leiblauw, ivoor, oker */
+:root{--green:#536168;--ink:#26353b;--red:#ef5134;--paper:#fffefb;--cream:#f8edce;--line:#d5d7d2}
+body{background:#e9eef0;color:var(--ink)}
+header{background:#394950;border-bottom:5px solid #c9a45c}
+header small{color:#e2e5e4}
+.hint{background:#f8f2e5;color:#47565c;border-bottom:1px solid #e1d7c5}
+.deskpanel{background:#fffefa;border:5px solid #536168;border-bottom:0;box-shadow:0 8px 26px #26353b19}
+.desk-kicker{color:#bf5239}
+.deskpanel h2{color:#35464e}
+.deskpanel-head p{color:#52616a}
+.desktools button{border:1.5px solid #536168;box-shadow:0 3px 0 #38484d;color:#34434a;border-radius:10px}
+.desktools button[data-open="bewijs"]{background:#f5e2b7}
+.desktools button[data-open="rooster"]{background:#d9e2e2}
+.desktools button[data-open="woordenlijst"]{background:#ece4ce}
+.desktools button:hover{background:#f7d6a2}
+.tabletop{background-color:#64747a;background-image:linear-gradient(90deg,#ffffff0c 1px,transparent 1px),linear-gradient(#ffffff0c 1px,transparent 1px),radial-gradient(ellipse at 82% 20%,#9ba8a846 0,transparent 56%),radial-gradient(ellipse at 10% 85%,#34464d55 0,transparent 50%);background-size:38px 38px,38px 38px,auto,auto;border:7px solid #536168;border-top:3px solid #536168;box-shadow:0 16px 35px #28393f38}
+.tabletop:before{color:#e5e4d2;opacity:.8}
+.gamecard{filter:drop-shadow(2px 5px 4px #1b2d3655)}
+.gamecard.dragging{filter:drop-shadow(5px 12px 9px #1b2d3688)}
+.face{border-color:#6d7c7e;border-radius:11px}
+.face.front{background:#fffefa;border-top:7px solid #536168}
+.face.back{background:#fffefa;border-top:7px solid #c9a45c}
+.eyebrow,.backtitle{color:#b24e36}
+.cardname,.backname{color:#35464e}
+.cardmeta{color:#69747a}
+.portrait:before{background:#f4e9c9}
+.personfact{background:#f1eee4}
+.personfact strong{color:#657076}
+.gamecard[data-type="persoon"] .face.front{border-top-color:#536168}
+.gamecard[data-type="apparaat"] .face.front{border-top-color:#c9a45c}
+.gamecard[data-type="app"] .face.front{border-top-color:#e87956}
+.gamecard[data-type="apparaat"] .personfact{background:#f7efdc}
+.gamecard[data-type="app"] .personfact{background:#faebe4}
+.flipbtn{color:#475a60;background:#fff9ec;border-color:#b6b4a8}
+.flipbtn:hover{background:#f4e9c9}
+.boardfinish{background:#ef5134;border-color:#fff7e6;box-shadow:0 5px 0 #a63725,0 9px 18px #26353b55}
+.boardfinish:hover{background:#db452b}
+.boardreset{background:#f9f5e9e8;border:1px solid #b7b5a9;color:#47565c}
+.boardlegend span{background:#fffefb;border:1px solid #d8d8cf;border-left:5px solid #536168;color:#35464e}
+.boardlegend span:nth-child(2){border-left-color:#c9a45c}
+.boardlegend span:nth-child(3){border-left-color:#e87956}
+.modal{background:#1f3039b8}
+.sheet{border:3px solid #536168;background:#fffefa;box-shadow:0 22px 65px #1f303955}
+.sheet h2{color:#35464e}
+.close{color:#dc5339}
+.modal-actions button,.toolbar button{color:#35464e}
+.clue{border-bottom-color:#e5e1d5}
+.clue input{accent-color:#e75b3c}
+.logic th,.logic td{border-color:#d7dad7}
+.logic th{background:#eee6d2;color:#35464e}
+.logic th.rowhead{background:#dfe7e7;color:#35464e}
+.logic td button{color:#35464e}
+.logic td button[data-v="no"]{color:#bd4934;background:#f9e7df}
+.logic td button[data-v="yes"]{color:#456e68;background:#e3eeea}
+.vocabentry{background:#fbf7ed;border-color:#e5dfd2;border-left-color:#c9a45c}
+.vocabentry strong{color:#35464e}
+.vocabentry span{color:#b65039}
+.pill{background:#f2e6c9}
+
+/* V7 — rustige editorial interface met speelse kleuraccenten */
+:root{--green:#42545b;--ink:#27353a;--red:#ec573b;--paper:#ffffff;--cream:#fff5e3;--line:#e4e5e3}
+body{background:#f6f7f5;color:#27353a;font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
+header{background:#fff;border:0;border-bottom:1px solid #e7e9e7;color:#2c3d43;padding:20px max(24px,calc((100vw - 1180px)/2))}
+header strong{font-size:21px;letter-spacing:-.6px}
+header strong span{color:#66767b}
+header small{color:#8b9698;font-size:12px}
+.hint{background:transparent;border:0;color:#778487;font-size:12px;padding:12px max(24px,calc((100vw - 1180px)/2));font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
+.workspace{max-width:1230px;margin:auto;padding:12px 22px 50px}
+.deskpanel{border:1px solid #e6e8e5;background:white;box-shadow:none;border-radius:18px 18px 0 0;overflow:hidden}
+.deskpanel-head{background:#fff;padding:26px 32px 22px;border:0}
+.desk-kicker{font-size:11px;color:#d65b40;letter-spacing:2px;font-weight:800}
+.deskpanel h2{color:#263b42;font-size:32px;letter-spacing:-1.1px;margin:9px 0 14px}
+.deskpanel-head p{color:#58686d;font-size:15px;line-height:1.65;max-width:850px}
+.desktools{background:#fff;padding:0 30px 23px;display:flex;gap:11px;flex-wrap:wrap}
+.desktools button{background:#f6f8f7!important;border:1px solid #e0e6e3!important;box-shadow:none!important;border-radius:10px!important;padding:12px 17px!important;color:#34474e!important;font-size:14px;font-weight:650;transition:background .15s,transform .15s}
+.desktools button:hover{background:#eaf0ee!important;transform:translateY(-1px)}
+.desktools button[data-open="bewijs"]:before{content:'';display:inline-block;background:#ec573b;width:8px;height:8px;border-radius:50%;margin-right:7px}
+.desktools button[data-open="rooster"]:before{content:'';display:inline-block;background:#d7a447;width:8px;height:8px;border-radius:50%;margin-right:7px}
+.desktools button[data-open="woordenlijst"]:before{content:'';display:inline-block;background:#68a8a2;width:8px;height:8px;border-radius:50%;margin-right:7px}
+.tabletop{background:#eef1ef!important;background-image:none!important;border:1px solid #e1e7e3!important;border-top:0!important;border-radius:0 0 18px 18px!important;box-shadow:none!important}
+.tabletop:before{color:#9ca9a7;font-size:11px;letter-spacing:2px;opacity:1}
+.gamecard{filter:drop-shadow(0 3px 6px #263b4222)}
+.gamecard.dragging{filter:drop-shadow(0 10px 14px #263b4244)}
+.face{background:#fff!important;border:1px solid #e0e5e2!important;border-radius:12px!important;box-shadow:0 0 0 1px #ffffff88}
+.face.front{border-top:4px solid #d4dad8!important}
+.face.back{border-top:4px solid #d4dad8!important}
+.gamecard[data-type="persoon"] .face.front{border-top-color:#ed6b51!important}
+.gamecard[data-type="apparaat"] .face.front{border-top-color:#dfb45c!important}
+.gamecard[data-type="app"] .face.front{border-top-color:#6daaa7!important}
+.portrait:before{background:#f8e8d4!important}
+.gamecard[data-type="apparaat"] .portrait:before{background:#f7efd9!important}
+.gamecard[data-type="app"] .portrait:before{background:#e4f0ee!important}
+.eyebrow,.backtitle{color:#869396!important;font-size:8px}
+.cardname,.backname{color:#293d44!important}
+.cardmeta{color:#8b979a}
+.personfact,.gamecard[data-type="apparaat"] .personfact,.gamecard[data-type="app"] .personfact{background:#f5f7f6!important}
+.personfact strong{color:#7d898d}
+.flipbtn{background:white!important;color:#53686e!important;border:1px solid #dce3df!important;box-shadow:0 1px 4px #0001}
+.flipbtn:hover{background:#f0f4f2!important}
+.boardfinish{background:#ec573b!important;border:0!important;border-radius:11px!important;box-shadow:0 4px 12px #ec573b40!important;font-size:17px!important;padding:14px 23px!important}
+.boardfinish:hover{background:#d94c32!important}
+.boardreset{background:#ffffffb8!important;border:1px solid #dce2de!important;color:#758487!important;border-radius:9px!important;box-shadow:none!important}
+.boardlegend{gap:8px}
+.boardlegend span{background:white!important;border:1px solid #e2e6e3!important;border-left:0!important;border-radius:20px!important;color:#758487!important;font-size:12px}
+.boardlegend span:nth-child(1):before,.boardlegend span:nth-child(2):before,.boardlegend span:nth-child(3):before{content:'●';margin-right:6px}
+.boardlegend span:nth-child(1):before{color:#ed6b51}.boardlegend span:nth-child(2):before{color:#dfb45c}.boardlegend span:nth-child(3):before{color:#6daaa7}
+.modal{background:#263b4277}
+.sheet{border:1px solid #e4e8e5!important;border-radius:18px!important;background:white!important;box-shadow:0 25px 75px #17282f44!important;font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
+.sheet h2{color:#293e45}
+.close{color:#d95841}
+.logic th{background:#f7f3ea!important}.logic th.rowhead{background:#edf2f0!important}
+.vocabentry{background:#f8faf9!important;border-color:#e5eae7!important;border-left-color:#e2ae55!important}
+.vocabentry strong{color:#2b4149!important}.vocabentry span{color:#bd654d!important}
+@media(max-width:680px){.deskpanel-head{padding:20px}.desktools{padding:0 18px 20px}.deskpanel h2{font-size:26px}.desktools button{font-size:12px!important;padding:11px!important}}
+
+/* V8 — speels editorial palet, grote rustige kleurvlakken */
+:root{--green:#4A6163;--ink:#293e40;--red:#F17A7E;--paper:#F9FAF4;--cream:#FFF3E5;--line:#dfe6e1}
+body{background:#F9FAF4!important;color:#30484a!important}
+header{background:#F9FAF4!important;border-bottom:1px solid #dce4de!important;color:#4A6163!important}
+header strong{font-weight:900;letter-spacing:-.8px}
+header strong span{color:#7a8b89!important}
+header small,.hint{color:#7b8b8a!important}
+.deskpanel{background:#F9A66C!important;border:0!important;border-radius:18px 18px 0 0!important;box-shadow:none!important}
+.deskpanel-head{background:#F9A66C!important;padding:29px 34px 21px!important}
+.desk-kicker{color:#4A6163!important;font-size:11px!important;letter-spacing:1.8px}
+.deskpanel h2{color:#293e40!important;font-size:37px!important;letter-spacing:-1.5px!important}
+.deskpanel-head p{color:#354c4d!important;max-width:900px!important;font-size:15px!important}
+.desktools{background:#F9A66C!important;padding:0 32px 26px!important;gap:10px!important}
+.desktools button{background:#F9FAF4!important;border:1px solid #edc29d!important;color:#354f51!important;border-radius:10px!important;font-weight:750!important;box-shadow:none!important}
+.desktools button:hover{background:#fff3e5!important}
+.desktools button[data-open="bewijs"]:before{background:#F17A7E!important}
+.desktools button[data-open="rooster"]:before{background:#FFC94B!important}
+.desktools button[data-open="woordenlijst"]:before{background:#4A6163!important}
+.tabletop{background:#4A6163!important;background-image:none!important;border:0!important;border-radius:0 0 18px 18px!important;box-shadow:none!important}
+.tabletop:before{color:#d7e2df!important;opacity:.8!important}
+.face{background:#F9FAF4!important;border:1px solid #dbe2dc!important;border-radius:13px!important;box-shadow:0 2px 7px #2436381b!important}
+.face.front,.face.back{border-top:4px solid #dbe2dc!important}
+.gamecard[data-type="persoon"] .face.front{border-top-color:#F17A7E!important}
+.gamecard[data-type="apparaat"] .face.front{border-top-color:#FFC94B!important}
+.gamecard[data-type="app"] .face.front{border-top-color:#F9A66C!important}
+.portrait:before{background:#FFE1B5!important}
+.gamecard[data-type="apparaat"] .portrait:before{background:#FFF0BF!important}
+.gamecard[data-type="app"] .portrait:before{background:#F6DFD7!important}
+.cardname,.backname{color:#304b4d!important}
+.eyebrow,.backtitle,.cardmeta{color:#70817f!important}
+.personfact,.gamecard[data-type="apparaat"] .personfact,.gamecard[data-type="app"] .personfact{background:#edf0e9!important}
+.flipbtn{background:#fff9f1!important;border:1px solid #e5e2d8!important;color:#4A6163!important}
+.boardfinish{background:#F17A7E!important;color:#263d3e!important;border:0!important;box-shadow:0 5px 16px #24363840!important;font-weight:850!important}
+.boardfinish:hover{background:#f48e90!important}
+.boardreset{background:#F9FAF4!important;color:#4A6163!important;border:1px solid #dce4df!important}
+.boardlegend span{background:#F9FAF4!important;color:#4A6163!important;border:0!important}
+.boardlegend span:nth-child(1):before{color:#F17A7E!important}
+.boardlegend span:nth-child(2):before{color:#FFC94B!important}
+.boardlegend span:nth-child(3):before{color:#F9A66C!important}
+.sheet{background:#F9FAF4!important;border:1px solid #dce4de!important}
+.sheet h2{color:#304b4d!important}
+.close{color:#de6571!important}
+.logic th{background:#fff0cf!important;color:#304b4d!important}
+.logic th.rowhead{background:#e6eeea!important;color:#304b4d!important}
+.logic td button[data-v="no"]{color:#b9505b!important;background:#ffe8e8!important}
+.logic td button[data-v="yes"]{color:#3d6763!important;background:#e5efeb!important}
+.vocabentry{background:#fff7e9!important;border-color:#e8e4d9!important;border-left-color:#FFC94B!important}
+.vocabentry strong{color:#304b4d!important}.vocabentry span{color:#b45e60!important}
+@media(max-width:680px){.deskpanel-head{padding:22px!important}.desktools{padding:0 20px 22px!important}.deskpanel h2{font-size:29px!important}}
+
+/* V9 — rustige retro detective-esthetiek: diepe intro, zachte houten tafel */
+:root{--green:#344f51;--ink:#283f42;--red:#F17A7E;--paper:#F9FAF4;--cream:#FCEBD7;--line:#d9d9cf}
+body{background:#f3f2eb!important;color:#283f42!important;font-family:Georgia,'Iowan Old Style','Palatino Linotype',serif!important}
+header{background:#344f51!important;color:#fffdf7!important;border-bottom:0!important}
+header strong,header strong span{color:#fffdf7!important}
+header small{color:#dce8e3!important}
+.hint{background:#f3f2eb!important;color:#617374!important;font-family:Georgia,'Iowan Old Style',serif!important}
+.deskpanel{background:#344f51!important;border:0!important;border-radius:18px 18px 0 0!important;box-shadow:none!important}
+.deskpanel-head{background:#344f51!important;color:#fffdf7!important;padding:30px 34px 23px!important}
+.desk-kicker{color:#FFC94B!important;letter-spacing:2px!important}
+.deskpanel h2{color:#fffdf7!important;font-family:Georgia,'Iowan Old Style',serif!important;font-weight:700!important;letter-spacing:-.65px!important}
+.deskpanel-head p{color:#f4f3e8!important;max-width:900px!important;line-height:1.65!important}
+.deskpanel-head p b{color:#ffe1a4!important}
+.desktools{background:#344f51!important;padding:0 34px 27px!important}
+.desktools button{background:#f8f5ec!important;color:#344f51!important;border:1px solid #e1e4d9!important;border-radius:9px!important;font-family:Georgia,'Iowan Old Style',serif!important;font-size:15px!important;box-shadow:none!important}
+.desktools button:hover{background:#ffebce!important}
+.tabletop{background:#e9c5a8!important;background-image:repeating-linear-gradient(94deg,transparent 0px,transparent 132px,#a7795b0b 134px,transparent 140px),linear-gradient(135deg,#efd1b6,#e8c3a5 55%,#e3b998)!important;border:7px solid #cfaa8e!important;border-top:4px solid #cfaa8e!important;border-radius:0 0 18px 18px!important;box-shadow:inset 0 0 0 1px #fff9ec55,0 12px 30px #6c524321!important}
+.tabletop:before{color:#775c4c!important;opacity:.75!important}
+.face{background:#fffefa!important;border-color:#d8d2c8!important}
+.face.front,.face.back{background:#fffefa!important}
+.cardname,.backname{font-family:Georgia,'Iowan Old Style',serif!important}
+.boardreset{background:#fffaf2e6!important}
+.sheet{background:#fffef9!important;font-family:Georgia,'Iowan Old Style','Palatino Linotype',serif!important}
+.sheet h2{font-family:Georgia,'Iowan Old Style',serif!important}
+/* Bewijs als een notitieblok: lichte lijntjes, marge en doorhalen bij afvinken */
+#bewijs .sheet{background:#fffdf5!important;border:1px solid #ddd4c5!important;padding:29px 34px 27px 48px!important;box-shadow:0 18px 55px #1d303555!important}
+#bewijs .sheet:before{content:'';position:absolute;top:0;bottom:0;left:31px;width:2px;background:#e8a6a5;pointer-events:none}
+#bewijs .sheet h2{font-size:30px!important;margin-bottom:6px!important}
+#bewijs .sheet>p.small{color:#777a75}
+#bewijs .clue{background:repeating-linear-gradient(to bottom,transparent 0,transparent 27px,#dfe5e5 28px,#dfe5e5 29px);border-bottom:1px solid #e3e4dc!important;padding:13px 8px 15px!important;min-height:83px;align-items:flex-start;line-height:1.75!important;color:#34464a}
+#bewijs .clue input{accent-color:#F17A7E!important;flex-shrink:0;margin-top:6px}
+#bewijs .clue span{transition:opacity .15s}
+#bewijs .clue:has(input:checked) span{opacity:.42!important;text-decoration:line-through!important;text-decoration-thickness:2px!important;text-decoration-color:#bd7376!important}
+#bewijs .clue b{color:#344f51}
+/* Duidelijke, aaneengesloten L-roosterblokken met stevige scheidslijnen */
+#rooster .logic{border-collapse:separate!important;border-spacing:0!important;font-family:Georgia,'Iowan Old Style',serif!important}
+#rooster .logic th,#rooster .logic td{border:1px solid #d0d7d2!important}
+#rooster .logic th{background:#f7ebcf!important;color:#344f51!important}
+#rooster .logic th.rowhead{background:#e6eee9!important}
+#rooster .logic tr:nth-child(n+3):nth-child(-n+6)>:nth-child(2){border-left:3px solid #4A6163!important}
+#rooster .logic tr:nth-child(n+3):nth-child(-n+6)>:nth-child(5){border-right:3px solid #4A6163!important}
+#rooster .logic tr:nth-child(n+3):nth-child(-n+6)>:nth-child(6){border-left:3px solid #F17A7E!important}
+#rooster .logic tr:nth-child(n+3):nth-child(-n+6)>:nth-child(9){border-right:3px solid #F17A7E!important}
+#rooster .logic tr:nth-child(3)>:nth-child(n+2):nth-child(-n+5){border-top:3px solid #4A6163!important}
+#rooster .logic tr:nth-child(3)>:nth-child(n+6):nth-child(-n+9){border-top:3px solid #F17A7E!important}
+#rooster .logic tr:nth-child(6)>:nth-child(n+2):nth-child(-n+5){border-bottom:3px solid #4A6163!important}
+#rooster .logic tr:nth-child(6)>:nth-child(n+6):nth-child(-n+9){border-bottom:3px solid #F17A7E!important}
+#rooster .logic tr:nth-child(n+7):nth-child(-n+10)>:nth-child(2){border-left:3px solid #D29E37!important}
+#rooster .logic tr:nth-child(n+7):nth-child(-n+10)>:nth-child(5){border-right:3px solid #D29E37!important}
+#rooster .logic tr:nth-child(7)>:nth-child(n+2):nth-child(-n+5){border-top:3px solid #D29E37!important}
+#rooster .logic tr:nth-child(10)>:nth-child(n+2):nth-child(-n+5){border-bottom:3px solid #D29E37!important}
+#rooster .logic td.emptycorner{border:0!important;background:transparent!important}
+#rooster .logic td button{font-family:Georgia,serif!important}
+@media(max-width:680px){.deskpanel-head{padding:23px!important}.desktools{padding:0 20px 24px!important}#bewijs .sheet{padding:23px 18px 20px 38px!important}#bewijs .sheet:before{left:24px}}
+
+/* V10 — het tastbare onderzoeksbureau terug: rustig, warm, licht imperfect */
+:root{--green:#354c43;--ink:#30433c;--red:#e77b70;--paper:#f8f3e8;--cream:#f5e8d2;--line:#cbbda6}
+body{background:#eae6db!important;color:var(--ink)!important}
+header{background:#354c43!important;border-bottom:3px solid #263c33!important}
+.hint{background:#eee9de!important;color:#626b61!important;border-bottom:1px solid #d7cebe!important}
+.deskpanel{background:#354c43!important;border-radius:10px 10px 0 0!important;box-shadow:0 4px 13px #3d362a22!important;overflow:hidden}
+.deskpanel-head{background:#354c43!important;position:relative;isolation:isolate}
+.deskpanel-head:after{content:'DOSSIER 001';position:absolute;right:35px;top:29px;border:2px solid #e8ad56a8;color:#f1c987;padding:7px 11px;font:700 12px Georgia,serif;letter-spacing:2px;transform:rotate(7deg);opacity:.8;pointer-events:none;z-index:-1}
+.deskpanel h2{color:#fff9ee!important}
+.deskpanel-head p{color:#f4ede0!important}
+.desk-kicker{color:#edc77e!important}
+.desktools{background:#354c43!important}
+.desktools button{background:#f4ebd9!important;color:#354c43!important;border:1px solid #d7c6a8!important;border-radius:5px!important;box-shadow:1px 2px 0 #21382e55!important}
+.desktools button:hover{background:#fff5e1!important}
+.tabletop{
+ background-color:#dfbc99!important;
+ background-image:
+ repeating-linear-gradient(92deg,transparent 0,transparent 62px,#6b4a3410 64px,transparent 68px,transparent 151px,#fff8e710 153px,transparent 157px),
+ repeating-linear-gradient(1deg,transparent 0,transparent 4px,#855d3a07 5px,transparent 8px),
+ radial-gradient(ellipse at 14% 18%,#fff1d64a,transparent 65%),
+ linear-gradient(110deg,#e9caaa 0%,#dbb48f 45%,#e3c09d 100%)!important;
+ border:10px solid #9b7153!important;border-top:6px solid #a87c5d!important;border-radius:0 0 14px 14px!important;
+ box-shadow:inset 0 0 0 2px #f9e0ba70,inset 0 0 22px #7c533c24,0 13px 25px #4b362a33!important
+}
+.tabletop:before{color:#775942!important;letter-spacing:2px!important;font-size:11px!important}
+.gamecard{filter:drop-shadow(2px 4px 3px #63493650)!important}
+.gamecard:nth-of-type(4n+1):not(.dragging){transform:rotate(-.65deg)}
+.gamecard:nth-of-type(4n+2):not(.dragging){transform:rotate(.55deg)}
+.gamecard:nth-of-type(4n+3):not(.dragging){transform:rotate(-.3deg)}
+.gamecard.dragging{filter:drop-shadow(5px 10px 7px #49362b6b)!important;transform:rotate(0deg)!important}
+.face,.face.front,.face.back{background:#fffaf0!important;border:1.5px solid #b7a48d!important;border-radius:5px!important;box-shadow:inset 0 0 0 3px #fffdf7,0 1px 2px #4c392820!important}
+.face.front,.face.back{border-top:3px solid #b7a48d!important}
+.gamecard[data-type="persoon"] .face.front{border-top-color:#d87969!important}
+.gamecard[data-type="apparaat"] .face.front{border-top-color:#cfa34c!important}
+.gamecard[data-type="app"] .face.front{border-top-color:#73938b!important}
+.portrait:before{background:#f0e0c2!important}
+.gamecard[data-type="apparaat"] .portrait:before{background:#f3e5b9!important}
+.gamecard[data-type="app"] .portrait:before{background:#e3e7d9!important}
+.cardname,.backname{color:#354c43!important}
+.eyebrow,.backtitle{color:#a66d58!important}
+.personfact,.gamecard[data-type="apparaat"] .personfact,.gamecard[data-type="app"] .personfact{background:#f2ecdf!important;border-radius:2px!important}
+.flipbtn{background:#fff9eb!important;border:1px solid #c4b29a!important;border-radius:50%!important}
+.boardfinish{background:#e77b70!important;color:#342e2a!important;border:2px solid #fff0d6!important;border-radius:7px!important;box-shadow:0 4px 0 #aa5a51,0 7px 14px #5b3f2e44!important}
+.boardfinish:hover{background:#ef8b80!important}
+.boardreset{background:#f7ecd8eb!important;color:#6b5746!important;border:1px solid #b69a7e!important;border-radius:5px!important}
+.boardlegend span{background:#f7f0e3!important;color:#495b50!important;border:1px solid #d5c8b4!important;border-radius:3px!important}
+.sheet{background:#fffaf0!important;border:2px solid #c5b59e!important;border-radius:6px!important;box-shadow:0 14px 45px #1f2d2766!important}
+.sheet h2{color:#354c43!important}
+#bewijs .sheet{background:#fffaf0!important;box-shadow:4px 5px 0 #c4b9a5,0 17px 45px #1d303555!important}
+#bewijs .clue{background:repeating-linear-gradient(to bottom,transparent 0,transparent 27px,#d7dfda 28px,#d7dfda 29px)!important}
+#bewijs .clue:has(input:checked) span{text-decoration-color:#bb6d61!important}
+@media(max-width:680px){.deskpanel-head:after{top:12px;right:12px;font-size:9px;padding:4px 6px;opacity:.4}}
+
+/* V11: een ononderbroken kader rondom het dossier en de onderzoekstafel */
+.deskpanel{
+  border:9px solid #80634d!important;
+  border-bottom:0!important;
+  border-radius:13px 13px 0 0!important;
+  box-shadow:none!important;
+}
+.tabletop{
+  border:9px solid #80634d!important;
+  border-top:0!important;
+  border-radius:0 0 13px 13px!important;
+  box-shadow:inset 0 0 0 2px #f9e0ba70,inset 0 0 22px #7c533c24,0 13px 25px #4b362a33!important;
+}
+/* Eén gedempt kleurenstelsel voor de drie aaneengesloten roosterblokken. */
+#rooster .logic tr:nth-child(n+3):nth-child(-n+6)>:nth-child(2),
+#rooster .logic tr:nth-child(n+3):nth-child(-n+6)>:nth-child(6),
+#rooster .logic tr:nth-child(n+7):nth-child(-n+10)>:nth-child(2){border-left-color:#64796e!important}
+#rooster .logic tr:nth-child(n+3):nth-child(-n+6)>:nth-child(5),
+#rooster .logic tr:nth-child(n+3):nth-child(-n+6)>:nth-child(9),
+#rooster .logic tr:nth-child(n+7):nth-child(-n+10)>:nth-child(5){border-right-color:#64796e!important}
+#rooster .logic tr:nth-child(3)>:nth-child(n+2):nth-child(-n+9),
+#rooster .logic tr:nth-child(7)>:nth-child(n+2):nth-child(-n+5){border-top-color:#64796e!important}
+#rooster .logic tr:nth-child(6)>:nth-child(n+2):nth-child(-n+9),
+#rooster .logic tr:nth-child(10)>:nth-child(n+2):nth-child(-n+5){border-bottom-color:#64796e!important}
+#rooster .logic th{background:#f2e9d8!important;color:#354c43!important}
+#rooster .logic th.rowhead{background:#e9e7dc!important}
+#rooster .logic td button[data-v="no"]{color:#9e5d55!important;background:#f7e9e3!important}
+#rooster .logic td button[data-v="yes"]{color:#416b5d!important;background:#e5ede4!important}
+
+/* V12: echt hout met horizontale nerven, gebaseerd op de aangeleverde referentie. */
+.tabletop{
+ background-color:#dfbc99!important;
+ background-image:linear-gradient(90deg,#e7c7a41c,#b78c6410 50%,#ead2b01b),url("../images/desk-texture.jpg")!important;
+ background-size:100% 100%, 680px 1280px!important;
+ background-repeat:no-repeat,repeat!important;
+ background-position:center,center top!important;
+}
+/* Notitiepapier: één doorlopend lijnritme; iedere tekstregel heeft precies dezelfde hoogte. */
+#bewijs .sheet{
+ background:#fffdf5!important;
+ padding:29px 34px 27px 55px!important;
+}
+#bewijs .sheet:before{left:39px!important;background:#db9b98!important;width:2px!important}
+#bewijs .sheet:after{
+ content:'';position:absolute;left:11px;top:110px;bottom:75px;width:13px;
+ background:radial-gradient(circle at center,#ded6c6 0 4px,#fffdf5 4.5px) center top/13px 56px repeat-y;
+ pointer-events:none;opacity:.9;
+}
+#bewijs .clue{
+ background:repeating-linear-gradient(to bottom,transparent 0px,transparent 27px,#cbd9d8 27px,#cbd9d8 28px)!important;
+ background-position:0 0!important;
+ border:0!important;
+ padding:0 9px 28px 3px!important;
+ margin:0!important;
+ min-height:0!important;
+ gap:13px!important;
+ align-items:flex-start!important;
+ font-size:14px!important;
+ line-height:28px!important;
+}
+#bewijs .clue span{display:block!important;line-height:28px!important;padding:0!important;margin:0!important}
+#bewijs .clue b{font-weight:700!important}
+#bewijs .clue input{margin:6px 0 0!important;width:18px!important;height:18px!important}
+#bewijs .clue:has(input:checked) span{opacity:.55!important;text-decoration:line-through!important;text-decoration-color:#ad625d!important;text-decoration-thickness:2px!important}
+@media(max-width:680px){#bewijs .sheet{padding-left:51px!important}#bewijs .sheet:before{left:37px!important}}
+
+/* V13 — leesbare, licht handgeschreven bewijsaantekeningen. */
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Handlee&display=swap');
+#bewijs .sheet h2{font-family:'Amatic SC','Bradley Hand',cursive!important;font-size:43px!important;letter-spacing:.6px!important;line-height:1.05!important}
+#bewijs .clue{
+  font-family:'Handlee','Segoe Print','Comic Sans MS',cursive!important;
+  font-size:18px!important;
+  line-height:34px!important;
+  padding:0 9px 34px 3px!important;
+  background:repeating-linear-gradient(to bottom,transparent 0px,transparent 32px,#cbd9d8 32px,#cbd9d8 33px,transparent 33px,transparent 34px)!important;
+}
+#bewijs .clue span{font-family:inherit!important;font-size:inherit!important;line-height:34px!important;}
+#bewijs .clue b{font-weight:700!important}
+#bewijs .clue input{margin-top:8px!important}
+
+/* V14 — introductie in dezelfde rustige handgeschreven stijl als het bewijs. */
+.deskpanel-head p{
+  font-family:'Handlee','Segoe Print','Comic Sans MS',cursive!important;
+  font-size:19px!important;
+  line-height:1.65!important;
+  letter-spacing:.08px;
+}
+.deskpanel-head p b{font-family:inherit!important;font-weight:700!important}
+/* De rode kantlijn en perforatie lopen door tot de onderrand van het papier,
+   ook voorbij de zevende aanwijzing. */
+#bewijs .sheet:before{top:0!important;bottom:0!important}
+#bewijs .sheet:after{
+  top:110px!important;
+  bottom:0!important;
+  background-repeat:repeat-y!important;
+}
+@media(max-width:680px){.deskpanel-head p{font-size:18px!important}}
+
+/* V15: doorlopende perforatie en kantlijn over het volledige scrollbare notitiepapier.
+   Scroll op de modal in plaats van op het papier: de pseudo-elementen bewegen mee. */
+#bewijs.modal{overflow-y:auto!important;align-items:flex-start!important;overscroll-behavior:contain}
+#bewijs .sheet{max-height:none!important;overflow:visible!important;margin:auto auto 18px!important;flex-shrink:0!important;min-height:100%!important}
+#bewijs .sheet:before{top:0!important;bottom:0!important}
+#bewijs .sheet:after{top:110px!important;bottom:0!important}
+/* Woordenlijst in hetzelfde papier-/groen-/okerpalet als het dossier. */
+#woordenlijst .sheet{background:#f8f3e8!important;border:2px solid #354c43!important;box-shadow:5px 6px 0 #b4a58c,0 18px 48px #152b2550!important}
+#woordenlijst .sheet h2{color:#354c43!important;font-family:Georgia,serif!important}
+#woordenlijst .sheet .small{color:#6a6a5d!important}
+#woordenlijst #vocabsearch{background:#fffdf5!important;border:1px solid #b5a58d!important;border-radius:5px!important;color:#354c43!important;font-family:Georgia,serif!important}
+#woordenlijst .vocabentry{background:#fffdf5!important;border:1px solid #d8cdbb!important;border-left:4px solid #8e9e8a!important;border-radius:4px!important;box-shadow:1px 2px 2px #554b3420!important}
+#woordenlijst .vocabentry strong{color:#354c43!important}
+#woordenlijst .vocabentry span{color:#95634e!important}
+#woordenlijst .modal-actions button{background:#f5e8d2!important;border-color:#b6a68f!important;color:#354c43!important}
+
+
+:root{--green:#14543e;--ink:#244b3b;--red:#9d5847;--paper:#fffaf0;--cream:#f5efdf;--line:#c9bda7}
+body{background:#f5efdf}body>header{display:none!important}
+.hint{background:#f7f0e2;color:#3d5848;border-bottom:1px solid #d8c8aa}
+.workspace{padding:14px 12px 24px}
+.deskpanel-head{background:#14543e!important}
+.deskpanel{border-color:#846248!important}
+.toolbar button:hover{color:#14543e}
+
+
+/* V17: unified emerald header and usable, viewport-bound popups */
+.deskpanel,.deskpanel-head,.desktools{background:#14543e!important;background-image:none!important}
+.deskpanel-head{box-shadow:none!important;border-color:#14543e!important}
+.modal{overflow:hidden!important;align-items:center!important;justify-content:center!important;padding:clamp(8px,2vh,18px)!important}
+.modal .sheet{max-height:calc(100dvh - 36px)!important;overflow-y:auto!important;overscroll-behavior:contain!important;margin:0 auto!important;min-height:0!important;flex-shrink:1!important;scrollbar-gutter:stable;}
+#bewijs .sheet{max-height:calc(100dvh - 36px)!important;overflow-y:auto!important;margin:0 auto!important;min-height:0!important;flex-shrink:1!important;}
+#bewijs .sheet:before,#bewijs .sheet:after{bottom:0!important}
+@supports not (height:100dvh){.modal .sheet,#bewijs .sheet{max-height:calc(100vh - 36px)!important}}
+
+
+/* V19: a single scroll surface for the evidence notebook. The paper itself
+   grows with all seven clues, including its margin and punched holes. */
+#bewijs.modal{overflow-y:auto!important;overflow-x:hidden!important;align-items:flex-start!important;justify-content:center!important;overscroll-behavior:contain!important;-webkit-overflow-scrolling:touch!important}
+#bewijs.modal .sheet{height:auto!important;max-height:none!important;min-height:0!important;overflow:visible!important;flex:0 0 auto!important;margin:8px auto 22px!important;position:relative!important}
+#bewijs.modal .sheet::before{top:0!important;bottom:0!important;height:auto!important}
+#bewijs.modal .sheet::after{top:110px!important;bottom:0!important;height:auto!important;background-repeat:repeat-y!important}
+/* A slightly deeper emerald, only within the dossier. */
+:root{--green:#104733!important;--ink:#234638!important}
+.deskpanel-head{background-color:#104733!important;background-image:none!important}
+
+/* v20: one continuous dark emerald surface, including inner heading and toolbar */
+.deskpanel,.deskpanel-head,.desktools,.deskpanel .toolbar,.deskpanel .deskpanel-head {background-color:#104733!important;background-image:none!important;}
+.deskpanel-head::before,.deskpanel-head::after {background-color:transparent!important;}
+
+
+/* V25: compact evidence notebook; seven clues fit on common laptop displays. */
+#bewijs.modal{overflow:hidden!important;align-items:center!important;justify-content:center!important;padding:8px!important}
+#bewijs.modal .sheet{box-sizing:border-box!important;width:min(94vw,740px)!important;height:auto!important;max-height:calc(var(--viewport-height, 100dvh) - 18px)!important;min-height:0!important;overflow-y:auto!important;overscroll-behavior:contain!important;margin:0 auto!important;padding:13px 24px 12px 43px!important;border-radius:7px!important}
+#bewijs .sheet h2{font-size:23px!important;margin:0 35px 2px 0!important}
+#bewijs .sheet>p.small{font-size:11px!important;margin:0 0 5px!important;line-height:1.25!important}
+#bewijs .clue{font-size:12.5px!important;line-height:1.32!important;min-height:0!important;padding:5px 4px 6px!important;gap:9px!important;background:repeating-linear-gradient(to bottom,transparent 0,transparent 21px,#dfe5e5 22px,#dfe5e5 23px)!important}
+#bewijs .clue input{width:15px!important;height:15px!important;margin-top:2px!important}
+#bewijs .modal-actions{margin-top:7px!important;gap:8px!important}
+#bewijs .modal-actions button{padding:7px 11px!important;font-size:12px!important}
+#bewijs .sheet:before{left:28px!important}
+#bewijs .sheet:after{top:75px!important}
+#bewijs .close{top:8px!important;right:12px!important}
+/* Match dossier popups to the visible browser viewport while the iframe scrolls in the parent. */
+.modal{top:0!important;bottom:auto!important;height:var(--viewport-height,100dvh)!important;transform:translateY(var(--viewport-shift,0px))!important;box-sizing:border-box!important}
+@media(max-width:620px){#bewijs.modal .sheet{width:98vw!important;padding:11px 13px 10px 35px!important}#bewijs .clue{font-size:11.5px!important;line-height:1.25!important;padding:5px 2px!important}#bewijs .sheet:before{left:23px!important}}
+
+
+/* V26: readable handwritten-paper rhythm: each baseline matches the ruled paper. */
+#bewijs .clue{font-size:15px!important;line-height:28px!important;padding:0 4px 0 3px!important;margin:0 0 7px!important;gap:11px!important;align-items:flex-start!important;background:repeating-linear-gradient(to bottom,transparent 0,transparent 27px,#cbd9d8 27px,#cbd9d8 28px)!important;background-position:0 0!important;}
+#bewijs .clue span,#bewijs .clue b{line-height:28px!important;}
+#bewijs .clue input{margin-top:7px!important;}
+#bewijs.modal .sheet{padding-top:15px!important;padding-bottom:14px!important;}
+@media(max-width:620px){#bewijs .clue{font-size:13px!important;line-height:25px!important;background:repeating-linear-gradient(to bottom,transparent 0,transparent 24px,#cbd9d8 24px,#cbd9d8 25px)!important}#bewijs .clue span,#bewijs .clue b{line-height:25px!important}}
+
+html,body{height:auto!important;min-height:0!important;overflow-x:hidden!important;overflow-y:visible!important}body{margin:0!important} .modal.open{overscroll-behavior:contain}
+
+/* Only the vocabulary popup: preserve the proven evidence and logic-grid behavior. */
+#woordenlijst.modal{overflow:hidden!important;align-items:center!important;justify-content:center!important;padding:9px!important;box-sizing:border-box!important;}
+#woordenlijst.modal .sheet{position:relative!important;box-sizing:border-box!important;width:min(92vw,740px)!important;height:auto!important;max-height:calc(var(--viewport-height, 100dvh) - 18px)!important;min-height:0!important;overflow-y:auto!important;overflow-x:hidden!important;overscroll-behavior:contain!important;-webkit-overflow-scrolling:touch!important;margin:0 auto!important;padding:20px 24px!important;scrollbar-gutter:stable!important;}
+#woordenlijst .close{position:sticky!important;top:0!important;float:right!important;z-index:12!important;margin:-8px -9px 0 8px!important;right:auto!important;background:#f8f3e8!important;border:1px solid #b5a58d!important;border-radius:50%!important;width:36px!important;height:36px!important;line-height:30px!important;text-align:center!important;cursor:pointer!important;}
+#woordenlijst .vocabgrid{gap:7px!important;}
+#woordenlijst .vocabentry{padding:7px 10px!important;}
+@media(max-width:680px){#woordenlijst.modal .sheet{width:calc(100vw - 18px)!important;padding:14px!important;}}
+
+.site-header{display:block!important;background:#354c43!important;color:#fff!important;padding:0!important;border-bottom:1px solid #607268!important}.site-nav{max-width:1200px;margin:auto;min-height:54px;padding:8px 18px;display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap}
